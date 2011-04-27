@@ -1,0 +1,6 @@
+%ul
+  %li= link_to "Home", '/', {:class => "left-rounded"}
+  %li= link_to "Store", webpage_show_path({:page_alias => 'store'})
+  %li= link_to "Services", webpage_show_path({:page_alias => 'services'})
+  %li= link_to "About", webpage_show_path({:page_alias => 'about'})
+  %li= link_to 'Contact', webpage_show_path({:page_alias => 'contact'}), :class => 'right-rounded'

@@ -1,0 +1,24 @@
+!!!XML
+!!! 5
+%html
+  %head
+  %title Treasures of Quilting - Custom, Picture, Memory and T-Shirt Quilts and Quality Quilted Products
+  %meta{"http-equiv"=>"Content-Type", :content =>"text/html; charset=utf-8"}
+  = stylesheet_link_tag 'base', 'gallery'
+  = javascript_include_tag 'prototype', 'effects','application', 'slideshow', 'gallery'
+  %body
+  %section#header
+    %header
+      #logo.shadow.hidden.floatLeft
+        %hgroup
+          %h1= link_to "Treasures of Quilting", "/"
+          %h2 Custom, Picture, Memory and T-Shirt Quilts and Quality Quilted Products.
+      %nav
+        = render :partial => 'layouts/navigation', :locals => {:object => current_page(params)}
+  %section#content.clearfix
+    .inner
+      = render :partial => 'shared/website_sidebar', :locals => {:web_pages => @web_pages}
+      = yield
+  %footer
+    %nav
+      = render :partial => 'layouts/navigation', :locals => {:object => current_page(params)}

@@ -1,0 +1,32 @@
+%h3= "#{AppSystem::NAME} Dashboard"
+%table#attributes
+  %thead
+    %tr
+      %td{:colspan => 2} Website Attributes
+  %tr.odd
+    %td Number of webpages
+    %td= @webpages.size
+  %tr
+    %td Number of subpages
+    %td= @subpages.size
+  %tr.odd
+    %td Number of uploaded images
+    %td= @images.size
+%table#statistics
+  %thead
+    %tr
+      %td{:colspan => 2} Statistics
+  %tr.odd
+    %td Current User
+    %td= "#{current_user.first_name} #{current_user.last_name}"
+  %tr
+    %td Last logged in
+    %td= current_user.last_login_at.strftime('%b %d, %Y - %I:%M %p') unless current_user.last_login_at.nil?
+  %tr.odd
+    %td Last Updated
+    %td= current_user.last_updated
+/#preview
+/  %h4 Preview Website Attributes
+/  %ul
+/    = render :partial => '/editor/preview_li', :collection => [@webpages, @subpages, @projects], :as => :objects #TODO clean this up, make it more general <-- need @blogs
+

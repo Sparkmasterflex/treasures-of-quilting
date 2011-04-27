@@ -1,0 +1,8 @@
+#mainContent.minHeight.rounded-20.shadow
+  %div{:class => num_columns(object)}
+    %h1= object.page_title
+    %p= add_html_tags(object.preview_text)
+    %p= add_html_tags(object.text)
+  - if object.has_enabled_images?
+    .rightcol
+      = render :partial => image_display(object), :locals => {:object => object, :column => 'right'}

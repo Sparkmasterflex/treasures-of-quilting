@@ -1,0 +1,10 @@
+.leftcol
+  %h2 Content
+  - form_for @subpage, :url => webpage_subpages_path, :html => {:method => :post, :multipart => true} do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    .formfield
+      = f.submit "Create Subpage"
+.rightcol
+  = render :partial => '/shared/page_status', :locals => {:object => @subpage}
+  #page-images
+    = render :partial => "/images/slideshow_edit", :locals => {:object => @subpage}

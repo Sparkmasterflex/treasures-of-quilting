@@ -1,0 +1,12 @@
+#login-window
+  %h3 Please Log In
+  = show_notice
+  - form_for @user_session, :url => login_path(@user_session), :method => :post do |f|
+    .formfield
+      = f.label :login, "Username:"
+      = f.text_field :login
+    .formfield
+      = f.label :password, "Password:"
+      = f.password_field :password
+    .formfield
+      = f.submit "Login"

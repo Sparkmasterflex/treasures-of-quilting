@@ -1,0 +1,6 @@
+%li
+  %h2= subpage_desc.page_title
+  = image_tag subpage_desc.images.first_enabled.attachment.url(:sm_preview), {:alt => subpage_desc.images.first_enabled.attachment_file_name} if subpage_desc.has_enabled_images?
+  - unless subpage_desc.preview_text.blank?
+    %p= subpage_desc.preview_text
+  = link_to "Learn More", subpage_show_path(:parent => subpage_desc.parent, :page_alias => subpage_desc.page_alias)

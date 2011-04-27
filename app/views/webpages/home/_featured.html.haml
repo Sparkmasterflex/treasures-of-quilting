@@ -1,0 +1,21 @@
+.left-rounded.feature
+  %p new products coming
+.feature.middle
+  %h4 Quilt Calculator
+  %p Calculate an estimate of what your custom quilt, quilt finishing or other services will cost before making any commitment
+  .button-link.rounded-10.button
+    =link_to 'Calculate', '#', :class => 'rounded-10'
+.right-rounded.feature
+  %h4 Quick Questions
+  - form_for @contact, :url => contacts_path, :html => {:method => :post, :id => 'contact-form'} do |f|
+    .formfield
+      = f.label :name, 'Name:'
+      = f.text_field :name
+    .formfield
+      = f.label :email, 'Email:'
+      = f.text_field :email
+    .formfield
+      = f.label :message, 'Message:'
+      = f.text_area :message, {:size => '16x3'}
+    .formfield
+      = f.submit 'send'

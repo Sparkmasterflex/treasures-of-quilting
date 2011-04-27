@@ -1,0 +1,26 @@
+- content_for :jstemplates do
+  = raw %(var new_image="#{generate_template(f, :images, :partial => "/images/image_field", :form_builder_local => :img)}")
+.formfield
+  = f.label :page_title
+  = f.text_field :page_title
+  = f.hidden_field :updated_by, :value => current_user.id
+.formfield.clearfix
+  = hidden_field_tag "webpage[is_root]", '0', {:id => nil}
+  = check_box_tag "webpage[is_root]", "1", f.object.is_root, {:id => 'webpage_is_root'}
+  = f.label :is_root, "Mark as homepage"
+  = link_to "Help", '#help', {:class => 'help icon hidden', 'data-help' => 'root-help'}
+%p#root-help.collapse Checking "Mark as homepage" will set this page as the homepage and will un-set the the previous page marked as homepage.
+.formfield
+  = link_to "Help", '#help', {:class => 'help icon hidden', 'data-help' => 'template-help'}
+  = f.label :template
+  = f.select :template, AppSystem::Templates.options_for_select  
+= render :partial => '/shared/template_help'
+.formfield
+  = f.label :preview_text
+  = f.text_area :preview_text, {:size => "50x6", :maxlength => 140}
+.formfield
+  = f.label :text, "Main Body Text"
+  = f.text_area :text, :size => "50x20"
+#images
+  %h4 Images
+= link_to 'Add an Image', '#image', {:class => "add icon add_nested_item", "data-update" => "images", "data-template" => "new_image", :title => "Add an Image"}

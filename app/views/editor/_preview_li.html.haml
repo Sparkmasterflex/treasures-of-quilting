@@ -1,0 +1,6 @@
+%li
+  = preview_link_text(objects.first)
+  - unless objects.empty?
+    %ul
+      - objects.each do |obj|
+        %li= link_to link_text(obj), "##{obj.id}"

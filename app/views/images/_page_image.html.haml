@@ -1,0 +1,5 @@
+.section
+  - if object.has_images?
+    %h3= raw "Images for <em>#{object.page_title}</em>"
+    %ul#slides
+      = render :partial => '/images/image_edit', :collection => ordered_images(object.images), :as => :image, :locals => {:object => object, :is_project => false}
