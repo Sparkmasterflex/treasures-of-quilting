@@ -1,0 +1,20 @@
+- if object.has_subpages?
+  %h2
+    Edit
+    = object.page_alias.capitalize
+    Subpages
+  %ul
+    = render :partial => '/editor/subpage', :collection => object.subpages
+#subpages-fields
+  %h2
+    Create
+    = object.page_alias.capitalize
+    Subpage
+  - form_for :subpage, :url => webpage_subpages_path(object) do |s|
+    .formfield
+      = s.label :page_title
+      = s.text_field :page_title
+      = s.hidden_field :page_alias, {:class => 'page_attr'}
+      = s.hidden_field :updated_by, {:class => 'updated_by_attr', :value => @current_user.id}
+    .formfield
+      = s.submit 'Create Subpage'

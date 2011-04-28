@@ -1,0 +1,7 @@
+%h1 Edit Pages
+= show_notice
+- unless @webpages.blank?
+  %ul#top-level
+    = render :partial => '/editor/webpage', :collection => @webpages
+- else
+  %p No pages to edit

@@ -1,0 +1,14 @@
+#sub-nav.clearfix
+  = link_to "Everything", "#all-subpages", {:id => "subpages-link", :rel => 'drop-down'}
+  .drop-down
+    /= link_to "Close", "#close", {:class => "delete icon hidden floatRight"}
+    - Webpage.all.each do |web|
+      - if web.has_subpages?
+        .webpage.floatLeft
+          %h3= web.page_title
+          %menu
+            = render :partial => '/subpages/subpage_li', :collection => web.subpages
+  = render_pagination(subpages, {:controller => "subpages", :action => 'subpages_preview'.to_s, :webpage_id => object.id, :id => nil, :right => false})
+.section
+  %menu#sub-page-desc.clearfix
+    = render :partial => '/subpages/subpage_desc', :collection => subpages

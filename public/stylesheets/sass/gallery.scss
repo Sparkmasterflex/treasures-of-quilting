@@ -1,0 +1,65 @@
+@import 'mixins';
+
+#gallery-overlay {
+  background: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  min-height: 100%;
+}
+
+#gallery-temp,
+#gallery-window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 502;
+  padding: 2em 3em;
+  line-height: 2.5em;
+  background: #333 url(images/ajax-loader.gif) no-repeat center center;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+  #gallery-window h4 {
+    padding-top: 0.15em;
+    padding-bottom: 0.35em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #222;
+  }
+
+  #gallery-window .formfield {margin-bottom: 0;}
+
+#gallery-temp {padding: 0; border: none;}
+
+  a#gallery-close {
+    position: absolute;
+    z-index: 900;
+    right: -18px;
+    top: -15px;
+    @include rounded(20px);
+    background: url(images/close.png) no-repeat center center, -moz-linear-gradient(top, #A82435 0%, #8B1423 50%, #6B0B17 51%, #50030D 100%);
+    background: url(images/close.png) no-repeat center center, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A82435), color-stop(50%,#8B1423), color-stop(51%,#6B0B17), color-stop(100%,#50030D));
+    display: block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+
+  #gallery-window #next-prev {    
+    position: absolute;
+    width: 92%;
+    bottom: 20px;
+    top: auto;    
+    padding: 0.5em 1em;
+  }
+  #gallery-window #next-prev a { font-size: 16px; color: #fff; }
+    #gallery-window #next-prev #next-img,
+    #gallery-window #next-prev #previous-img { width: 25%; display: block; }
+    #gallery-window #next-prev #next-img { float: right; text-align: right; }
+    #gallery-window #next-prev p { float: left; color: #fff; text-align: center; width: 50%; margin-bottom: 0;}
+    #gallery-window #next-prev #previous-img { float: left; }

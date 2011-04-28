@@ -1,0 +1,17 @@
+!!!XML
+!!! 5
+%html
+  %head
+    %title if(keithRaymond) { Web, Application and Flash Designer and Developer }
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
+    = stylesheet_link_tag 'html5_reset', 'editor'
+  %body#login
+    %section#header
+      %header
+        %hgroup
+          %h1 Juggernaut Web Editor
+          %h2= "Edit #{AppSystem::NAME} Content"
+    %section#content
+      = yield
+    %section#footer
+      %footer.clearfix

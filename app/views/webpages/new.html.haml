@@ -1,0 +1,10 @@
+.leftcol
+  %h2 Content
+  - form_for @webpage, :url => webpages_path, :html => {:method => :post, :multipart => true} do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    .formfield
+      = f.submit "Create Webpage"
+.rightcol
+  = render :partial => '/shared/page_status', :locals => {:object => @webpage}
+  #page-images
+    = render :partial => "/images/slideshow_edit", :locals => {:object => @webpage}

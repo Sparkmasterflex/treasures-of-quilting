@@ -1,0 +1,11 @@
+.leftcol
+  %h3 Content
+  = show_notice
+  - form_for @webpage, :url => webpage_path(@webpage), :html => {:method => :put, :multipart => true} do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    .formfield
+      = f.submit "Update #{@webpage.page_alias.capitalize} Page"
+.rightcol
+  = render :partial => '/shared/page_status', :locals => {:object => @webpage}
+  #page-images
+    = render :partial => "/images/slideshow_edit", :locals => {:object => @webpage}

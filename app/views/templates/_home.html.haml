@@ -1,0 +1,11 @@
+#mainContent.minHeight.rounded-20.shadow
+  .rightcol
+    %h1= object.page_title
+    %p= add_html_tags(object.preview_text)
+    %p= add_html_tags(object.text)
+    #learn.dark-grad.right-bottom-rounded= link_to 'Learn More', '#', :class => "floatRight"
+  - if object.has_enabled_images?
+    .leftcol
+      = render :partial => image_display(object), :locals => {:object => object, :column => 'left'}
+#featured.clearfix
+  = render :partial => 'webpages/home/featured', :locals => {:object => object}

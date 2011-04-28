@@ -1,0 +1,10 @@
+.leftcol
+  %h3 Content
+  - form_for @subpage, :url => webpage_subpage_path(@subpage), :html => {:method => :put, :multipart => true} do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    .formfield
+      = f.submit "Update #{@subpage.page_alias.capitalize} Page"
+.rightcol
+  = render :partial => '/shared/page_status', :locals => {:object => @subpage}
+  #page-images
+    = render :partial => "/images/slideshow_edit", :locals => {:object => @subpage}

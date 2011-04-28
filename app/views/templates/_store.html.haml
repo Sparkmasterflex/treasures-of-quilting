@@ -1,0 +1,8 @@
+#mainContent.minHeight.rounded-20.shadow
+  .contentText
+    %h1= object.page_title
+    %p= add_html_tags(object.preview_text)
+    %p= add_html_tags(object.text)
+  - if object.has_enabled_images?
+    #subpage-preview
+      = render :partial => '/widgets/js_gallery', :locals => {:object => object, :column => 'row'}

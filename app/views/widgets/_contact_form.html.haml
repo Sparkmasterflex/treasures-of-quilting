@@ -1,0 +1,13 @@
+%h4 Quick Questions
+- form_for @contact, :url => contacts_path, :html => {:method => :post, :id => 'contact-form'} do |f|
+  .formfield
+    = f.label :name, 'Name:'
+    = f.text_field :name
+  .formfield
+    = f.label :email, 'Email:'
+    = f.text_field :email
+  .formfield
+    = f.label :message, 'Message:'
+    = f.text_area :message, {:size => '16x3'}
+  .formfield
+    = f.submit 'send'

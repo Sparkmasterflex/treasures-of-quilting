@@ -1,0 +1,5 @@
+%li
+  = link_to webpage.page_alias.capitalize, edit_webpage_path(webpage)
+  - unless webpage.subpages.empty?
+    %ul.sub-pages
+      = render :partial => '/editor/subpage', :collection => webpage.subpages
