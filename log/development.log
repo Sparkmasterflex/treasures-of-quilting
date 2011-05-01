@@ -3478,3 +3478,275 @@ DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called
   [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6)[0m
 Rendered subpages/edit.html.haml within layouts/editor (207.8ms)
 Completed 200 OK in 317ms (Views: 206.8ms | ActiveRecord: 8.3ms)
+  [1m[36mSQL (8.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateWebpages (20110328222359)
+Migrating to CreateSubpages (20110328222428)
+Migrating to CreateUsers (20110328223724)
+Migrating to CreateImages (20110328232023)
+Migrating to CreateContacts (20110328232226)
+Migrating to IsRoot (20110402031810)
+Migrating to CreateWidgets (20110403190256)
+Migrating to AddPreviewText (20110409161859)
+Migrating to PageEnabled (20110410164321)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `contacts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `contacts`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `images`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `images`
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `subpages`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `subpages`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `webpages`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `webpages`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `widgets`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `widgets`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (60.1ms)[0m  DROP TABLE `widgets`
+  [1m[36mSQL (25.1ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110403190256'[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `contacts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `contacts`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `images`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `images`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `subpages`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `subpages`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `webpages`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `webpages`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (50.6ms)[0m  CREATE TABLE `widgets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gadget_id` int(11) NOT NULL, `gadget_type` varchar(255) NOT NULL, `widget` int(11) NOT NULL, `content` text, `enabled` tinyint(1) DEFAULT 0 NOT NULL, `position` int(11) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110403190256')
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  describe `contacts`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `contacts`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `images`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `images`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `subpages`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `subpages`[0m
+  [1m[35mSQL (1.1ms)[0m  describe `users`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `webpages`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `webpages`[0m
+  [1m[35mSQL (0.7ms)[0m  describe `widgets`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `widgets`[0m
+
+
+Started GET "/" for 127.0.0.1 at Sun May 01 13:32:53 -0400 2011
+  Processing by WebpagesController#show as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mWebpage Load (1.1ms)[0m  SELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)
+  [1m[36mWebpage Load (0.3ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (`webpages`.`is_root` = 1) LIMIT 1[0m
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 1) LIMIT 0, 4
+  [1m[36mImage Load (1.3ms)[0m  [1mSELECT id FROM `images` WHERE (`images`.`attachable_type` = 'Webpage') AND (`images`.`attachable_id` = 1) AND (`images`.`enabled` = 1)[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT `images`.* FROM `images` WHERE (`images`.attachable_id = 1 AND `images`.attachable_type = 'Webpage')
+  [1m[36mWidget Load (0.6ms)[0m  [1mSELECT `widgets`.* FROM `widgets` WHERE (`widgets`.gadget_id = 1 AND `widgets`.gadget_type = 'Webpage') AND (`widgets`.`widget` = 10) AND (`widgets`.`enabled` = 1) LIMIT 1[0m
+  [1m[35mWidget Load (0.2ms)[0m  SELECT `widgets`.* FROM `widgets` WHERE (`widgets`.gadget_id = 1 AND `widgets`.gadget_type = 'Webpage') AND (`widgets`.`widget` = 70) AND (`widgets`.`enabled` = 1) LIMIT 1
+  [1m[36mImage Load (0.8ms)[0m  [1mSELECT `images`.* FROM `images` WHERE (`images`.attachable_id = 1 AND `images`.attachable_type = 'Webpage') AND (`images`.`enabled` = 1) ORDER BY position LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `images`.* FROM `images` WHERE (`images`.attachable_id = 1 AND `images`.attachable_type = 'Webpage') AND (`images`.`enabled` = 1) ORDER BY position LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `images`.* FROM `images` WHERE (`images`.attachable_id = 1 AND `images`.attachable_type = 'Webpage') AND (`images`.`enabled` = 1) ORDER BY position LIMIT 1[0m
+Rendered images/_single_image.html.haml (13.8ms)
+Rendered widgets/_featured_page.html.haml (0.9ms)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_widgets__contact_form_html_haml___722368790_92665750_1210576 at /var/www/vhosts/toq/httpdocs/app/views/widgets/_contact_form.html.haml:2)
+Rendered widgets/_contact_form.html.haml (6.8ms)
+Rendered webpages/home/_featured.html.haml (12.7ms)
+Rendered templates/_home.html.haml (60.3ms)
+Rendered layouts/_navigation.html.haml (2.5ms)
+  [1m[35mSubpage Load (0.4ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 3)
+  [1m[36mSubpage Load (1.1ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 3) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (6.5ms)
+  [1m[35mSubpage Load (0.2ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 4)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 4) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (0.9ms)
+  [1m[35mSubpage Load (0.2ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (0.8ms)
+Rendered shared/_website_sidebar.html.haml (22.8ms)
+Rendered layouts/_navigation.html.haml (2.1ms)
+Rendered webpages/show.html.haml within layouts/application (97.4ms)
+Completed 200 OK in 218ms (Views: 94.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/images/uploaded/webpages/1/8_slideshow.jpg?1302379404" for 127.0.0.1 at Sun May 01 13:32:55 -0400 2011
+
+ActionController::RoutingError (No route matches "/images/uploaded/webpages/1/8_slideshow.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/uploaded/subpages/1/4_sm_preview.jpg" for 127.0.0.1 at Sun May 01 13:32:58 -0400 2011
+
+ActionController::RoutingError (No route matches "/images/uploaded/subpages/1/4_sm_preview.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/editor" for 127.0.0.1 at Sun May 01 13:36:46 -0400 2011
+  Processing by WebpagesController#dashboard as HTML
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mWebpage Load (0.7ms)[0m  SELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)
+Redirected to http://local.toq/login
+Completed 302 Found in 127ms
+
+
+Started GET "/login" for 127.0.0.1 at Sun May 01 13:36:47 -0400 2011
+  Processing by UserSessionsController#new as HTML
+  [1m[35mWebpage Load (1.1ms)[0m  SELECT `webpages`.* FROM `webpages`
+  [1m[36mSubpage Load (0.3ms)[0m  [1mSELECT `subpages`.* FROM `subpages`[0m
+  [1m[35mImage Load (0.8ms)[0m  SELECT `images`.* FROM `images`
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_user_sessions_new_html_haml___1073042364_92546530_0 at /var/www/vhosts/toq/httpdocs/app/views/user_sessions/new.html.haml:4)
+Rendered user_sessions/new.html.haml within layouts/login (8.4ms)
+Completed 200 OK in 60ms (Views: 12.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/stylesheets/html5_reset.css" for 127.0.0.1 at Sun May 01 13:36:47 -0400 2011
+  Processing by SubpagesController#show as CSS
+  Parameters: {"parent"=>"stylesheets", "page_alias"=>"html5_reset"}
+  [1m[36mWebpage Load (0.4ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)[0m
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.`page_alias` = 'html5_reset') LIMIT 1
+Completed   in 235ms
+
+ActionView::MissingTemplate (Missing template subpages/show with {:handlers=>[:rhtml, :erb, :rxml, :haml, :builder, :rjs], :locale=>[:en, :en], :formats=>[:css]} in view paths "/var/www/vhosts/toq/httpdocs/app/views"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started POST "/login?format=" for 127.0.0.1 at Sun May 01 13:36:58 -0400 2011
+  Processing by UserSessionsController#create as 
+  Parameters: {"commit"=>"Login", "user_session"=>{"password"=>"[FILTERED]", "login"=>"keith"}, "authenticity_token"=>"3anhJB3K6zVTvPGujkGcyY1our3qqoBD/cBHT2ejZKY=", "utf8"=>"\342\234\223"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (LOWER(`users`.login) = 'keith') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `current_login_at` = '2011-05-01 17:36:58', `last_login_at` = '2011-04-10 17:21:02', `last_request_at` = '2011-05-01 17:36:58', `login_count` = 4, `perishable_token` = 'f6g9HNb5w1Fj3h4DxdPT' WHERE (`users`.`id` = 1)[0m
+  [1m[35mSQL (229.8ms)[0m  COMMIT
+Redirected to http://local.toq/editor
+Completed 302 Found in 678ms
+
+
+Started GET "/editor" for 127.0.0.1 at Sun May 01 13:36:59 -0400 2011
+  Processing by WebpagesController#dashboard as HTML
+  [1m[36mWebpage Load (0.4ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2011-05-01 17:36:59', `perishable_token` = 'BXyJp2FMtQBIkaH0aZkN' WHERE (`users`.`id` = 1)[0m
+  [1m[35mSQL (4.9ms)[0m  COMMIT
+  [1m[36mWebpage Load (0.4ms)[0m  [1mSELECT `webpages`.* FROM `webpages`[0m
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages`
+  [1m[36mImage Load (0.4ms)[0m  [1mSELECT `images`.* FROM `images`[0m
+  [1m[35mWebpage Load (0.3ms)[0m  SELECT `webpages`.* FROM `webpages` WHERE (`webpages`.`updated_by` = 1) ORDER BY updated_at LIMIT 1
+  [1m[36mSubpage Load (0.3ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.`updated_by` = 1) ORDER BY updated_at LIMIT 1[0m
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_layouts_editor_html_haml___234302683_91590370_0 at /var/www/vhosts/toq/httpdocs/app/views/layouts/editor.html.haml:9)
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 1)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 2)[0m
+  [1m[35mSubpage Load (0.2ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 3)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 4)[0m
+  [1m[35mSubpage Load (0.2ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 5)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6)[0m
+Rendered webpages/dashboard.html.haml within layouts/editor (136.6ms)
+Completed 200 OK in 245ms (Views: 139.7ms | ActiveRecord: 240.1ms)
+
+
+Started GET "/stylesheets/html5_reset.css" for 127.0.0.1 at Sun May 01 13:36:59 -0400 2011
+  Processing by SubpagesController#show as CSS
+  Parameters: {"parent"=>"stylesheets", "page_alias"=>"html5_reset"}
+  [1m[36mWebpage Load (0.4ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)[0m
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.`page_alias` = 'html5_reset') LIMIT 1
+Completed   in 37ms
+
+ActionView::MissingTemplate (Missing template subpages/show with {:handlers=>[:rhtml, :erb, :rxml, :haml, :builder, :rjs], :locale=>[:en, :en], :formats=>[:css]} in view paths "/var/www/vhosts/toq/httpdocs/app/views"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun May 01 13:37:02 -0400 2011
+  Processing by WebpagesController#show as HTML
+  [1m[35mWebpage Load (0.4ms)[0m  SELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)
+  [1m[36mWebpage Load (0.2ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (`webpages`.`is_root` = 1) LIMIT 1[0m
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 1) LIMIT 0, 4
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT id FROM `images` WHERE (`images`.`attachable_type` = 'Webpage') AND (`images`.`attachable_id` = 1) AND (`images`.`enabled` = 1)[0m
+Rendered widgets/_featured_page.html.haml (18.0ms)
+DEPRECATION WARNING: - style block helpers are deprecated. Please use =. (called from _app_views_widgets__contact_form_html_haml___722368790_91624020_1246736 at /var/www/vhosts/toq/httpdocs/app/views/widgets/_contact_form.html.haml:2)
+Rendered widgets/_contact_form.html.haml (11.5ms)
+Rendered webpages/home/_featured.html.haml (37.6ms)
+Rendered templates/_home.html.haml (59.9ms)
+Rendered layouts/_navigation.html.haml (2.9ms)
+  [1m[35mSubpage Load (0.4ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 3)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 3) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (8.6ms)
+  [1m[35mSubpage Load (0.3ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 4)
+  [1m[36mSubpage Load (0.3ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 4) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (1.2ms)
+  [1m[35mSubpage Load (0.2ms)[0m  SELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6)
+  [1m[36mSubpage Load (0.2ms)[0m  [1mSELECT `subpages`.* FROM `subpages` WHERE (`subpages`.webpage_id = 6) AND (`subpages`.`enabled` = 1)[0m
+Rendered subpages/_subpage_li.html.haml (111.8ms)
+Rendered shared/_website_sidebar.html.haml (142.0ms)
+Rendered layouts/_navigation.html.haml (2.4ms)
+Rendered webpages/show.html.haml within layouts/application (220.3ms)
+Completed 200 OK in 282ms (Views: 227.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/images/uploaded/subpages/1/4_sm_preview.jpg" for 127.0.0.1 at Sun May 01 13:37:03 -0400 2011
+
+ActionController::RoutingError (No route matches "/images/uploaded/subpages/1/4_sm_preview.jpg"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/editor/webpages/1/edit" for 127.0.0.1 at Sun May 01 13:37:08 -0400 2011
+  Processing by WebpagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWebpage Load (0.6ms)[0m  SELECT `webpages`.* FROM `webpages` WHERE (page_alias NOT IN ('about','contact') AND is_root != 1 AND enabled = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `last_request_at` = '2011-05-01 17:37:08', `perishable_token` = '_0I2ept_YInOmguIAvof' WHERE (`users`.`id` = 1)
+  [1m[36mSQL (2843.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mWebpage Load (0.7ms)[0m  SELECT `webpages`.* FROM `webpages`
+  [1m[36mSubpage Load (0.4ms)[0m  [1mSELECT `subpages`.* FROM `subpages`[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT `images`.* FROM `images`
+  [1m[36mWebpage Load (0.2ms)[0m  [1mSELECT `webpages`.* FROM `webpages` WHERE (`webpages`.`id` = 1) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT `images`.* FROM `images` WHERE (`images`.attachable_id = 1 AND `images`.attachable_type = 'Webpage')
+Rendered images/_image_field.html.haml (4.6ms)
+  [1m[36mWidget Load (0.3ms)[0m  [1mSELECT `widgets`.* FROM `widgets` WHERE (`widgets`.gadget_id = 1 AND `widgets`.gadget_type = 'Webpage')[0m
+Rendered webpages/_form.html.haml (126.0ms)
+Rendered webpages/edit.html.haml within layouts/editor (132.8ms)
+Completed   in 3147ms
+
+ActionView::Template::Error (Missing partial /widgets/widget_field with {:handlers=>[:rhtml, :erb, :rxml, :haml, :builder, :rjs], :locale=>[:en, :en], :formats=>[:html]} in view paths "/var/www/vhosts/toq/httpdocs/app/views"):
+    1: - content_for :jstemplates do
+    2:   = raw %(var new_image="#{generate_template(f, :images, :partial => "/images/image_field", :form_builder_local => :img)}")
+    3:   = raw %(var new_widget="#{generate_template(f, :widgets, :partial => "/widgets/widget_field", :form_builder_local => :w)}")
+    4: .formfield
+    5:   = f.label :page_title
+    6:   = f.text_field :page_title
+  app/helpers/application_helper.rb:51:in `generate_html'
+  app/helpers/application_helper.rb:50:in `generate_html'
+  app/helpers/application_helper.rb:56:in `generate_template'
+  app/views/webpages/_form.html.haml:3:in `_app_views_webpages__form_html_haml___467592801_91362950_438718'
+  app/views/webpages/_form.html.haml:1:in `_app_views_webpages__form_html_haml___467592801_91362950_438718'
+  app/views/webpages/edit.html.haml:5:in `_app_views_webpages_edit_html_haml__838490037_91414930_0'
+  app/views/webpages/edit.html.haml:4:in `_app_views_webpages_edit_html_haml__838490037_91414930_0'
+  app/controllers/webpages_controller.rb:40:in `edit'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (90.4ms)

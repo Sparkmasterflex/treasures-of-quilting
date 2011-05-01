@@ -57,14 +57,14 @@ a, p, h3 { color: #222; }
   a { text-decoration: underline;
     &:hover { text-decoration: none; }
   }
+strong { font-weight: bold; }
+em { font-style: italic; }
 
 a.next-prev { display: block; width: 24px; height: 12px;
   &:hover { background-position: top left;} }
 
-html { height: 100%; }
 body {
   font: { size: 62.5%; family: Tahoma, Arial, san-serif; }
-  height: 100%;
   background: #dcdcdc;
 }
 footer, .inner {
@@ -281,6 +281,7 @@ ul#gallery {
     float: left;
     background: #fff;
     a { font-size: 2em; padding: 0.60em 0; width: 8.5em; }
+    p.floatRight { width: 10em; }
   }
 }
 

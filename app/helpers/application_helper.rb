@@ -1,16 +1,10 @@
 module ApplicationHelper
   def preview_text(text)
-    text = strip_tags(text)
-    text.size < 350 ?
-      text :
-      text.gsub!(/\r\n\r\n/, "").size > 350 ?
-         truncate(text, :length => 350) :
-         text.gsub!(/\r\n\r\n/, "")
+    text.gsub!(/\r\n\r\n/, "")
   end
 
   def add_html_tags(text)
-    text.gsub!(/\r\n\r\n/, '</p><p>')
-    with_tags = raw text.gsub(/<contact me>/, '<a href="/contact">contact me</a>')
+    with_tags = raw text.gsub(/\r\n\r\n/, '</p><p>').gsub(/b\[/, '<strong>').gsub(/\]b/, '</strong>').gsub(/i\[/, '<em>').gsub(/\]i/, '</em>').gsub(/h\[/, '<h3>').gsub(/\]h/, '</h3><p>')
   end
 
   def show_notice
@@ -105,5 +99,12 @@ module ApplicationHelper
 
   def has_image_display?(obj)
     obj.widgets.js_slideshow || obj.widgets.js_gallery
+  end
+
+  def display_preview(widget)
+    case widget
+      when Widget::Template::FEATURED_PAGE then '/widgets/featured_page'
+      when Widget::Template::CONTACT then '/widgets/contact_form'
+    end
   end
 end

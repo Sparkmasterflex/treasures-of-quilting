@@ -3,6 +3,11 @@ document.observe('dom:loaded', function(){
   $$('.delete').invoke('observe', 'click', ajaxDestroy);
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
+<<<<<<< HEAD
+=======
+  $$('.style').invoke('observe', 'click', addStyle);
+  if(findSelected($('webpage_template')) != '10') $('widgets').hide();
+>>>>>>> 7f10592832eb86736d811fbde91ec1b31edc6445
 });
 
 function observeImageElements() {
@@ -148,3 +153,26 @@ if (confirm('Are you sure you want to remove this?\nThis action cannot be undone
     });
   }
 }
+<<<<<<< HEAD
+=======
+
+function addStyle(e) {
+  e.stop();
+  var el = Event.element(e),
+      style = el.readAttribute('href'),
+      text = $('webpage_preview_text'),
+      selected = text.value.getRangeAt,
+      add = style == '#strong' ? '<strong></strong>' : '<em></em>';
+
+  alert(style)
+  //text.insert(add);
+}
+
+function findSelected(select) {
+  var option = '';
+  for(var i = 0; i < select.options.length; i++) {
+    if(select.options[i].readAttribute('selected') == 'selected') option = select.options[i].value;
+  }
+  return option;
+}
+>>>>>>> 7f10592832eb86736d811fbde91ec1b31edc6445

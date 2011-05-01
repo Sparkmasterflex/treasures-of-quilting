@@ -1,5 +1,6 @@
 #page-enabled
   %h3 Page Status
+<<<<<<< HEAD
   %ul
     %li= "Created: #{object.created_at.strftime('%m/%d/%Y')}"
     %li= "Last Updated: #{object.created_at.strftime('%m/%d/%Y')}"
@@ -8,3 +9,16 @@
       %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_path(object), {:class => "access icon #{object.link_class}", 'data-page' => object.id }
     - else
       %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_subpage_path(object.webpage, object), {:class => "access icon #{object.link_class}", 'data-page' => "#{object.webpage_id}-#{object.id}" }
+=======
+  - unless object.new_record?
+    %ul
+      %li= "Created: #{object.created_at.strftime('%m/%d/%Y')}"
+      %li= "Last Updated: #{object.created_at.strftime('%m/%d/%Y')}"
+      %li= "Updated By: #{object.last_updated_by}"
+      - if object.is_a?(Webpage)
+        %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_path(object), {:class => "access icon #{object.link_class}", 'data-page' => object.id }
+      - else
+        %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_subpage_path(object.webpage, object), {:class => "access icon #{object.link_class}", 'data-page' => "#{object.webpage_id}-#{object.id}" }
+  - else
+    %p= "New #{object.class.to_s}"
+>>>>>>> 7f10592832eb86736d811fbde91ec1b31edc6445

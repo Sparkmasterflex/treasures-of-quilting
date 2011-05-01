@@ -9,3 +9,6 @@
   = render :partial => '/shared/page_status', :locals => {:object => @webpage}
   #page-images
     = render :partial => "/images/slideshow_edit", :locals => {:object => @webpage}
+  - if @webpage.home_template?
+    #page-widgets
+      = render :partial => "/widgets/page_widgets", :locals => {:object => @webpage}

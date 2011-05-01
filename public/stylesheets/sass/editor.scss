@@ -313,7 +313,16 @@ body#editor {
           margin-bottom: 1em;
           label { width: 100%; display: block; margin-bottom: 0.63em; }
           label, select { font-size: 1.6em; }
-        }        
+        }
+        ul#page-widgets {
+          li {
+            background: #f1f1f1;
+            border: 1px solid #666;
+            @include rounded(5px);
+            padding: 0.31em;
+            p.floatRight { font-size: 1em; float: right; width: 9.06em; }
+          }
+        }
       }
       #blogs {
         article {

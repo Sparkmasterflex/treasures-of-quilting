@@ -31,9 +31,12 @@ class Webpage < ActiveRecord::Base
 
   accepts_nested_attributes_for :subpages
   accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :widgets
 
   before_validation :create_page_alias
   before_save :unset_current_root
+
+  validates :page_title, :preview_text, :presence => true
 
   def self.last_page_updated(user)
     self.find(:first, :conditions => {:updated_by => user.id}, :order => :updated_at) || "No pages updated by #{user.login}"
@@ -77,6 +80,10 @@ class Webpage < ActiveRecord::Base
   def last_updated_by
     user = User.find(self.updated_by)
     return "#{user.first_name} #{user.last_name}"
+  end
+
+  def home_template?
+    self.template == AppSystem::Templates::HOME
   end
 
   private

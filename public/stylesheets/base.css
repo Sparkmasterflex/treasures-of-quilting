@@ -96,6 +96,12 @@ a {
   a:hover {
     text-decoration: none; }
 
+strong {
+  font-weight: bold; }
+
+em {
+  font-style: italic; }
+
 a.next-prev {
   display: block;
   width: 24px;
@@ -103,13 +109,9 @@ a.next-prev {
   a.next-prev:hover {
     background-position: top left; }
 
-html {
-  height: 100%; }
-
 body {
   font-size: 62.5%;
   font-family: Tahoma, Arial, san-serif;
-  height: 100%;
   background: #dcdcdc; }
 
 footer, .inner {
@@ -370,6 +372,8 @@ ul#gallery li {
       font-size: 2em;
       padding: 0.60em 0;
       width: 8.5em; }
+    #featured .feature p.floatRight {
+      width: 10em; }
 
 .thumb-80 {
   border: 4px solid #222;

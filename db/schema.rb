@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20110410164321) do
     t.integer  "gadget_id",                      :null => false
     t.string   "gadget_type",                    :null => false
     t.integer  "widget",                         :null => false
+    t.text     "content"
     t.boolean  "enabled",     :default => false, :null => false
     t.integer  "position",    :default => 0,     :null => false
     t.datetime "created_at"
