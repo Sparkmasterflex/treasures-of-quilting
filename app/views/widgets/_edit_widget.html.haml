@@ -1,0 +1,3 @@
+%li{:id => "widget-#{edit_widget.id}"}
+  .widget-details.clearfix
+    = render :partial => display_preview(edit_widget.widget), :locals => {:widget => edit_widget}
