@@ -4,6 +4,7 @@ class CreateWidgets < ActiveRecord::Migration
       t.integer :gadget_id, :null => false
       t.string  :gadget_type, :null => false
       t.integer :widget, :null => false
+      t.text    :content
       t.boolean :enabled, :null => false, :default => false
       t.integer :position, :null => false, :default => 0
 

@@ -353,6 +353,16 @@ body#editor {
             margin-bottom: 0.63em; }
           body#editor section#content #main-content .rightcol .formfield.display label, body#editor section#content #main-content .rightcol .formfield.display select {
             font-size: 1.6em; }
+        body#editor section#content #main-content .rightcol ul#page-widgets li {
+          background: #f1f1f1;
+          border: 1px solid #666;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          padding: 0.31em; }
+          body#editor section#content #main-content .rightcol ul#page-widgets li p.floatRight {
+            font-size: 1em;
+            float: right;
+            width: 9.06em; }
       body#editor section#content #main-content #blogs article {
         width: 70em;
         margin: 2em 0;

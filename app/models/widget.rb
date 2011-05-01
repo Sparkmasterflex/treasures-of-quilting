@@ -15,12 +15,28 @@ class Widget < ActiveRecord::Base
 
     TEMPLATES = {SLIDESHOW => 'js_slideshow', CONTACT => 'contact_form', NEW_PRODUCTS => 'new_products', FEATURED_PRODUCTS => 'featured_products',
                  CALCULATOR => 'calculator', FEATURED_PAGE => 'featured_page', GALLERY => 'js_gallery'}
+    def self.options_for_select
+      lbl = LABELS.reject { |key, value| [SLIDESHOW, GALLERY].include? key }.sort.unshift([nil, "Please Select"]).collect { |arr| arr.reverse }
+    end
   end
 
   before_save :unique_image_display
 
   def self.destroy_widget(obj)
     self.find(:first, :conditions => {:gadget_id => obj.id, :gadget_type => obj.class.to_s, :widget => [Template::SLIDESHOW, Template::GALLERY]}).destroy
+  end
+
+  def self.available_featured_pages(page)
+    available = {}
+    web_conditions = page.is_a?(Webpage) ? ['is_root = false AND id != ?', page.id] : {:is_root => false}
+
+    options = {:order => :created_at}
+    options.merge!({:condition => ['id != ?', page.id]}) if page.is_a?(Subpage)
+
+    Webpage.find(:all, :conditions => web_conditions).each { |web| available.merge!({web.page_title => "Webpage_#{web.id}"}) }
+    Subpage.find(:all, options).each { |sub| available.merge!({sub.page_title => "Subpage_#{sub.id}"}) }
+
+    available
   end
 
   private

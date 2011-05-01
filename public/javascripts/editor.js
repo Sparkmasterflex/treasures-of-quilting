@@ -4,6 +4,7 @@ document.observe('dom:loaded', function(){
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
   $$('.style').invoke('observe', 'click', addStyle);
+  if(findSelected($('webpage_template')) != '10') $('widgets').hide();
 });
 
 function observeImageElements() {
@@ -160,4 +161,12 @@ function addStyle(e) {
 
   alert(style)
   //text.insert(add);
+}
+
+function findSelected(select) {
+  var option = '';
+  for(var i = 0; i < select.options.length; i++) {
+    if(select.options[i].readAttribute('selected') == 'selected') option = select.options[i].value;
+  }
+  return option;
 }

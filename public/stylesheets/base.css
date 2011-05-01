@@ -109,11 +109,9 @@ a.next-prev {
   a.next-prev:hover {
     background-position: top left; }
 
-/*html { height: 100%; }*/
 body {
   font-size: 62.5%;
   font-family: Tahoma, Arial, san-serif;
-  /*height: 100%;*/
   background: #dcdcdc; }
 
 footer, .inner {

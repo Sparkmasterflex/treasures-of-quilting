@@ -1,5 +1,5 @@
 %div{:class => "#{object.class.to_s.downcase} images"}
-  %h3= "#{object.class.to_s} images"
+  %h3 Images
   - if object.has_images?
     - if has_image_display?(object)
       = render :partial => '/widgets/image_group', :locals => {:object => object}

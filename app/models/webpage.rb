@@ -31,6 +31,7 @@ class Webpage < ActiveRecord::Base
 
   accepts_nested_attributes_for :subpages
   accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :widgets
 
   before_validation :create_page_alias
   before_save :unset_current_root
@@ -82,8 +83,8 @@ class Webpage < ActiveRecord::Base
     return "#{user.first_name} #{user.last_name}"
   end
 
-  def featured_page?
-
+  def home_template?
+    self.template == AppSystem::Templates::HOME
   end
 
   private

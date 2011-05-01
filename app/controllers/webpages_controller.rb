@@ -43,6 +43,10 @@ class WebpagesController < ApplicationController
   def update
     @webpage = Webpage.find(params[:id])
     @webpage.images.build(params[:images]) if params[:images]
+    @webpage.widgets.build(params[:widgets]) if params[:widgets]
+
+    Rails.logger.info "++++ params[:webpage] ++++"
+    Rails.logger.info params[:webpage].inspect
 
     if @webpage.update_attributes(params[:webpage])
       flash[:success] = "#{@webpage.page_title} Has been successfully saved!"

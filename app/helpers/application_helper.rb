@@ -100,4 +100,11 @@ module ApplicationHelper
   def has_image_display?(obj)
     obj.widgets.js_slideshow || obj.widgets.js_gallery
   end
+
+  def display_preview(widget)
+    case widget
+      when Widget::Template::FEATURED_PAGE then '/widgets/featured_page'
+      when Widget::Template::CONTACT then '/widgets/contact_form'
+    end
+  end
 end
