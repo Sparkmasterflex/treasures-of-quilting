@@ -85,7 +85,8 @@ var Gallery = Class.create({
     } else {
       // update the temp div so we can calculate the new popup window size
       this.imgTag = new Image();
-      var title = this.current.readAttribute('title'),
+      var imagePreloader = new Image(),
+          title = this.current.readAttribute('title'),
           next = this.current.up('li').next() ? this.current.up('li').next().down('a') : null,
           previous = this.current.up('li').previous() ? this.current.up('li').previous().down('a') : null;
       
@@ -99,9 +100,16 @@ var Gallery = Class.create({
       nextPrev.insert(imgTitle);
       nextPrev.insert(nextLink);
       
-      this.loaded(this.imgTag, nextPrev);
-      this.imgTag.src = this.current.readAttribute('href');
-      console.log(this.imgTag.src);
+      imagePreloader.onload = (function() {
+        this.imgTag.src = this.current.readAttribute('href');
+        this.imgTag.width = imagePreloader.width;
+        this.imgTag.height = imagePreloader.height;
+        this.pos = centerPosition(imagePreloader, imagePreloader.width, imagePreloader.height);
+        this.temp.update(this.imgTag);
+        this.temp.insert(nextPrev);
+        this.showPopup()
+      }).bind(this)
+      imagePreloader.src = this.current.readAttribute('href');
     }
   },
 

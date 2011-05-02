@@ -7,5 +7,6 @@
   - if object.has_enabled_images?
     .leftcol
       = render :partial => image_display(object), :locals => {:object => object, :column => 'left'}
-#featured.clearfix
-  = render :partial => 'webpages/home/featured', :locals => {:object => object}
+- unless @widgets.blank?
+  #featured.clearfix
+    = render :partial => 'webpages/home/featured', :locals => {:object => object, :widgets => @widgets}

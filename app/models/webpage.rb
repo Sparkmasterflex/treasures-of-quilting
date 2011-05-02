@@ -27,6 +27,10 @@ class Webpage < ActiveRecord::Base
     def js_gallery
       find(:first, :conditions => {:widget => Widget::Template::GALLERY, :enabled => true})
     end
+
+    def for_page(enabled=false, limit=nil)
+      find(:all, :conditions => ['widget NOT IN (?)', [Widget::Template::GALLERY, Widget::Template::SLIDESHOW]], :limit => limit)
+    end
   end
 
   accepts_nested_attributes_for :subpages

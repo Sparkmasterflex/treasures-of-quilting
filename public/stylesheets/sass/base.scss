@@ -27,18 +27,24 @@ menu { list-style: none; }
 .button {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4D041B), to(#7A1333));
   background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
-  a {
+  margin: 2em auto;
+  width: 17em;
+  padding: 0.35em;
+  @include rounded(10px);
+  a, input[type=submit] {
     text: { align: center; shadow: -1px -1px 1px #555; decoration: none; }
     color: #fff;
-    display: block;
+    display: block;    
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E3AFAF), to(#4D041B), color-stop(.5,#821436),color-stop(.5,#6C112D));
     background: -moz-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
+    @include rounded(5px);
     &:hover {
       text-shadow: none;
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A81A46), to(#A81A46), color-stop(.4,#4D041B),color-stop(.6,#4D041B));
       background: -moz-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
     }
   }
+  input[type=submit] { border: none; }
 }
 
 .clearfix {
@@ -269,6 +275,7 @@ ul#gallery {
     letter-spacing: 0.26em;
     margin-bottom: 0.42em;
   }
+  h5 { font-size: 2em; margin-bottom: 0.31em; text-align: center; }
   .middle {
     margin: 0 1em;
     padding: 1em 2em;
@@ -277,11 +284,13 @@ ul#gallery {
   .feature {
     padding: 1em;
     width: 30em;
-    height: 20em;
+    height: 23em;
     float: left;
     background: #fff;
-    a { font-size: 2em; padding: 0.60em 0; width: 8.5em; }
-    p.floatRight { width: 10em; }
+    a, input[type=submit] { font-size: 2em; width: 8.5em; }
+    a { padding: 0.6em 0; }
+    input[type=submit] { padding: 0.37em 0; }
+    p.floatRight { width: 9.5em; margin-left: 0.31em; }
   }
 }
 
@@ -291,12 +300,6 @@ ul#gallery {
   overflow: hidden;
   margin: 0 0.5em;
   height: 8em;
-}
-
-.button-link {
-  margin: 2em auto;
-  width: 17em;
-  padding: 0.35em;
 }
 
 

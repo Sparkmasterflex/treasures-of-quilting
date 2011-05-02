@@ -2,7 +2,7 @@
 !!! 5
 %html
   %head
-    %title if(keithRaymond) { Web, Application and Flash Designer and Developer }
+    %title= "#{AppSystem::NAME} editor"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag 'html5_reset', 'editor'
     = javascript_include_tag 'prototype', 'effects','editor', 'dynamic-fields'
@@ -13,7 +13,7 @@
       %header
         %hgroup
           %h1 Juggernaut Web Editor
-          %h2= "Edit #{AppSystem::NAME} Content"
+          %h2= "Edit #{AppSystem::APP_NAME} Content"
         %nav
           %ul
             %li= "Welcome, #{current_user.first_name}"

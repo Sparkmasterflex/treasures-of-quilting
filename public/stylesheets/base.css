@@ -61,19 +61,28 @@ menu {
 
 .button {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4d041b), to(#7a1333));
-  background: -moz-linear-gradient(96% 75% 90deg, #7a1333, #4d041b); }
-  .button a {
+  background: -moz-linear-gradient(96% 75% 90deg, #7a1333, #4d041b);
+  margin: 2em auto;
+  width: 17em;
+  padding: 0.35em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px; }
+  .button a, .button input[type=submit] {
     text-align: center;
     text-shadow: -1px -1px 1px #555555;
     text-decoration: none;
     color: #fff;
     display: block;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e3afaf), to(#4d041b), color-stop(0.5, #821436), color-stop(0.5, #6c112d));
-    background: -moz-linear-gradient(0% 53% 90deg, #4d041b, #821436, #6c112d 0%, #e3afaf 93%); }
-    .button a:hover {
+    background: -moz-linear-gradient(0% 53% 90deg, #4d041b, #821436, #6c112d 0%, #e3afaf 93%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; }
+    .button a:hover, .button input[type=submit]:hover {
       text-shadow: none;
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a81a46), to(#a81a46), color-stop(0.4, #4d041b), color-stop(0.6, #4d041b));
       background: -moz-linear-gradient(0% 96% 90deg, #a81a46, #4d041b, #a81a46 100%); }
+  .button input[type=submit] {
+    border: none; }
 
 .clearfix {
   display: inline-block; }
@@ -358,6 +367,10 @@ ul#gallery li {
     text-align: center;
     letter-spacing: 0.26em;
     margin-bottom: 0.42em; }
+  #featured h5 {
+    font-size: 2em;
+    margin-bottom: 0.31em;
+    text-align: center; }
   #featured .middle {
     margin: 0 1em;
     padding: 1em 2em;
@@ -365,15 +378,19 @@ ul#gallery li {
   #featured .feature {
     padding: 1em;
     width: 30em;
-    height: 20em;
+    height: 23em;
     float: left;
     background: #fff; }
-    #featured .feature a {
+    #featured .feature a, #featured .feature input[type=submit] {
       font-size: 2em;
-      padding: 0.60em 0;
       width: 8.5em; }
+    #featured .feature a {
+      padding: 0.6em 0; }
+    #featured .feature input[type=submit] {
+      padding: 0.37em 0; }
     #featured .feature p.floatRight {
-      width: 10em; }
+      width: 9.5em;
+      margin-left: 0.31em; }
 
 .thumb-80 {
   border: 4px solid #222;
@@ -381,11 +398,6 @@ ul#gallery li {
   overflow: hidden;
   margin: 0 0.5em;
   height: 8em; }
-
-.button-link {
-  margin: 2em auto;
-  width: 17em;
-  padding: 0.35em; }
 
 /*-------------------Pagination-----*/
 a#subpages-link {

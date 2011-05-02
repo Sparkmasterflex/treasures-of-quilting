@@ -30,6 +30,7 @@ class WebpagesController < ApplicationController
   def show    
     @webpage = params[:page_alias] ? Webpage.find(:first, :conditions => {:page_alias => params[:page_alias]}) : Webpage.current_root
     @subpages = @webpage.subpages.paginate(:page => params[:page], :per_page => 4)
+    @widgets = @webpage.widgets.for_page(3)
     @contact = Contact.new
   end
 

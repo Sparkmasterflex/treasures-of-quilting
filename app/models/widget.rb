@@ -38,6 +38,12 @@ class Widget < ActiveRecord::Base
 
     available
   end
+
+  def specific_content
+    case self.widget
+      when Template::FEATURED_PAGE then self.content.split("_").first.constantize.find(self.content.split("_").last.to_i)
+    end
+  end
   
   private
   

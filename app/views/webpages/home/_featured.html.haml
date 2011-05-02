@@ -1,9 +1,12 @@
 .left-rounded.feature
-  = render :partial => '/widgets/featured_page'
+  = render :partial => display_preview(widgets.first.widget), :locals => {:widget => widgets.first}
 .feature.middle
-  %h4 Quilt Calculator
-  %p Calculate an estimate of what your custom quilt, quilt finishing or other services will cost before making any commitment
-  .button-link.rounded-10.button
-    =link_to 'Calculate', '#', :class => 'rounded-10'
+  - if widgets[1]
+    = render :partial => display_preview(widgets[1].widget), :locals => {:widget => widgets[1]}
+  - else
+    = render :partial => '/webpages/home/default'
 .right-rounded.feature
-  = render :partial => '/widgets/contact_form'
+  - if widgets[2]
+    = render :partial => display_preview(widgets[2].widget), :locals => {:widget => widgets[2]}
+  - else
+    = render :partial => '/widgets/contact_form'

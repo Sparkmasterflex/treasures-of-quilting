@@ -1,3 +1,3 @@
 %h3 Widgets
 %ul#page-widgets
-  = render :partial => '/widgets/edit_widget', :collection => object.widgets, :locals => {:object => object}
+  = render :partial => '/widgets/edit_widget', :collection => object.widgets.for_page, :locals => {:object => object}

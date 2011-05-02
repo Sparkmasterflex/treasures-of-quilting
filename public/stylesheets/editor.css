@@ -51,7 +51,7 @@ p {
   p.flash_msg {
     display: block;
     padding: 0.19em 0.625em;
-    width: 100%;
+    width: 90%;
     color: #000; }
     p.flash_msg.notice {
       background: #EEE8AA;
@@ -359,10 +359,20 @@ body#editor {
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
           padding: 0.31em; }
-          body#editor section#content #main-content .rightcol ul#page-widgets li p.floatRight {
-            font-size: 1em;
-            float: right;
-            width: 9.06em; }
+          body#editor section#content #main-content .rightcol ul#page-widgets li h4 {
+            margin-bottom: 0.6em; }
+          body#editor section#content #main-content .rightcol ul#page-widgets li p {
+            font-size: 0.75em;
+            line-height: 1.5em; }
+            body#editor section#content #main-content .rightcol ul#page-widgets li p.floatRight {
+              float: right;
+              width: 12em; }
+            body#editor section#content #main-content .rightcol ul#page-widgets li p.floatLeft {
+              float: left; }
+          body#editor section#content #main-content .rightcol ul#page-widgets li menu li {
+            border: none; }
+            body#editor section#content #main-content .rightcol ul#page-widgets li menu li a {
+              font-size: 1em; }
       body#editor section#content #main-content #blogs article {
         width: 70em;
         margin: 2em 0;

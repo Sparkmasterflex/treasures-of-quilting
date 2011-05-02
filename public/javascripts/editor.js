@@ -3,11 +3,8 @@ document.observe('dom:loaded', function(){
   $$('.delete').invoke('observe', 'click', ajaxDestroy);
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
-<<<<<<< HEAD
-=======
   $$('.style').invoke('observe', 'click', addStyle);
   if(findSelected($('webpage_template')) != '10') $('widgets').hide();
->>>>>>> 7f10592832eb86736d811fbde91ec1b31edc6445
 });
 
 function observeImageElements() {
@@ -153,8 +150,6 @@ if (confirm('Are you sure you want to remove this?\nThis action cannot be undone
     });
   }
 }
-<<<<<<< HEAD
-=======
 
 function addStyle(e) {
   e.stop();
@@ -175,4 +170,3 @@ function findSelected(select) {
   }
   return option;
 }
->>>>>>> 7f10592832eb86736d811fbde91ec1b31edc6445

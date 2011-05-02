@@ -1,5 +1,6 @@
 module AppSystem
-  NAME = Rails.application.class.to_s.split("::").first
+  NAME = "Treasures of Quilting"
+  APP_NAME = Rails.application.class.to_s.split("::").first
   
   class Templates
     HOME           = 10
