@@ -91,7 +91,7 @@ p {
   padding: 3px 0 3px 20px;
 }
 
-.edit { background: url(images/silk/page_edit.png) no-repeat left center; }
+.edit { background: url(images/silk/pencil.png) no-repeat left center; }
 .add { background: url(images/silk/image_add.png) no-repeat left center; }
 .remove { background: url(images/silk/image_delete.png) no-repeat left center; }
 .delete { background: url(images/silk/cross.png) no-repeat left center; }
@@ -325,10 +325,15 @@ body#editor {
               &.floatRight { float: right; width: 12em; }
               &.floatLeft { float: left; }
             }
-            menu {
+            menu { width: 100%;
               li {
                 border: none;
-                a { font-size: 1em; }
+                width: 1em;
+                height: 1em;
+                float: left;
+                margin: 0.31em 0.31em 0.31em 0;
+                padding: 0;
+                a { font-size: 1em; padding: 0; }
               }
             }
           }

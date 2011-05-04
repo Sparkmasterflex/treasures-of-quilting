@@ -1,3 +1,7 @@
 %li{:id => "widget-#{edit_widget.id}"}
   .widget-details.clearfix
     = render :partial => display_preview(edit_widget.widget), :locals => {:widget => edit_widget}
+  %menu.clearfix
+    %li= link_to "Enable Widget", update_status_widget_path(edit_widget), {:class => "add icon hidden#{disabled_link(edit_widget, 'enable')}", :title => "Enable Widget"}
+    %li= link_to "Disable for Slideshow", update_status_image_path(edit_widget), {:class => "remove icon hidden#{disabled_link(edit_widget, 'disable')}", :title => "Disable Widget"}
+    %li= link_to "Delete", widget_path(edit_widget), {:class => "delete icon hidden", :title => "Delete Widget"}

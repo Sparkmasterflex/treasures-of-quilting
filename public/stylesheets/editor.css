@@ -86,7 +86,7 @@ ul.collapse li {
   padding: 3px 0 3px 20px; }
 
 .edit {
-  background: url(images/silk/page_edit.png) no-repeat left center; }
+  background: url(images/silk/pencil.png) no-repeat left center; }
 
 .add {
   background: url(images/silk/image_add.png) no-repeat left center; }
@@ -369,10 +369,18 @@ body#editor {
               width: 12em; }
             body#editor section#content #main-content .rightcol ul#page-widgets li p.floatLeft {
               float: left; }
-          body#editor section#content #main-content .rightcol ul#page-widgets li menu li {
-            border: none; }
-            body#editor section#content #main-content .rightcol ul#page-widgets li menu li a {
-              font-size: 1em; }
+          body#editor section#content #main-content .rightcol ul#page-widgets li menu {
+            width: 100%; }
+            body#editor section#content #main-content .rightcol ul#page-widgets li menu li {
+              border: none;
+              width: 1em;
+              height: 1em;
+              float: left;
+              margin: 0.31em 0.31em 0.31em 0;
+              padding: 0; }
+              body#editor section#content #main-content .rightcol ul#page-widgets li menu li a {
+                font-size: 1em;
+                padding: 0; }
       body#editor section#content #main-content #blogs article {
         width: 70em;
         margin: 2em 0;
