@@ -105,6 +105,14 @@ module ApplicationHelper
     case widget
       when Widget::Template::FEATURED_PAGE then '/widgets/featured_page'
       when Widget::Template::CONTACT then '/widgets/contact_form'
+      when Widget::Template::CALCULATOR then '/widgets/calculator'
     end
+  end
+
+  def parent_object(params)
+    klass = params[:controller] == 'webpages' ? 'Webpage' : 'Subpage'
+    obj_id = params[:id]
+
+    "#{klass}_#{obj_id}"
   end
 end

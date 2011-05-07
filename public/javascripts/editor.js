@@ -9,8 +9,8 @@ document.observe('dom:loaded', function(){
 
 function observeImageElements() {
   if($('slides')) {
-    $$('ul.image-links li a.add', 'ul.image-links li a.remove').invoke('observe', 'click', setImageState);
-    $$('.img-details .formfield input[type=text]').invoke('observe', 'blur', upDateImages);
+    $$('li a.add', 'li a.remove').invoke('observe', 'click', setImageState);
+    $$('.rightcol .formfield input[type=text]').invoke('observe', 'blur', upDateImages);
     $('image_display').observe('change', setImageDisplay);    
   }
 
@@ -32,7 +32,7 @@ function setImageState(e) {
   var el = Event.element(e),
       href = el.readAttribute('href'),
       enable = el.hasClassName('add'),
-      parent = el.up('.images') || el.up('.section');
+      parent = el.up('.images') || el.up('.widgets');
 
   if(!el.hasClassName('disabled')) {
     new Ajax.Updater(parent, href, {
@@ -50,7 +50,7 @@ function upDateImages(e) {
       val = el.value,
       previous = el.readAttribute('data-position') || el.readAttribute('data-caption'),
       url = el.readAttribute('data-url'),
-      parent = el.up('.images') || el.up('.section');
+      parent = el.up('.images') || el.up('.widgets');
 
   if(val != previous) {
     new Ajax.Updater(parent, url, {
@@ -169,4 +169,32 @@ function findSelected(select) {
     if(select.options[i].readAttribute('selected') == 'selected') option = select.options[i].value;
   }
   return option;
+}
+
+
+function updateWidgetValue(e) {
+  e.stop();
+  var el = Event.element(e),
+      val = el.value,
+      parent = el.up('.widget'),
+      update = parent.down('.widget-content'),
+      obj = parent.down('input[type=hidden]').readAttribute('data-object');
+
+  new Ajax.Updater(update, '/widgets/update_content', {
+    method: 'get',
+    parameters: {widget: val, object: obj},
+    onComplete: function(transport) {
+      if($('content_select')) $('content_select').observe('change', setWidgetContent);
+      if($('content_text')) $('content_text').observe('blur', setWidgetContent);
+    }
+  });
+}
+
+function setWidgetContent(e) {
+  var el = Event.element(e),
+      parent = el.up('.widget'),
+      hidden = parent.down('input[type=hidden]');
+  alert('hello');
+  alert(el.value);
+  hidden.value = el.value;
 }

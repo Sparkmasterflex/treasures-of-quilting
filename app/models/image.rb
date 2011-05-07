@@ -47,7 +47,7 @@ class Image < ActiveRecord::Base
     self.attached_to.blank?
   end
 
-  def reorder_images(obj, to)
+  def reorder(obj, to)
     others = obj.images.reject { |img| img.id == self.id }.sort_by { |o| o.position  }
     self.update_attribute('position', to)
     others.each { |o| o.update_attribute('position', to += 1) if o.position >= to }

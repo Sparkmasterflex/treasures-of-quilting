@@ -11,4 +11,4 @@
         = text_field_tag :caption, image.caption, {:size => 19, 'data-caption' => image.caption, 'data-url' => update_caption_image_path(image) }
       .formfield
         = label_tag 'image_position', "Position", {:id => nil}
-        = text_field_tag 'image_position', image.position, {:maxlength => 3, :size => 5, 'data-position' => image.position, 'data-url' => order_image_path(image)}
+        = text_field_tag 'image_position', image.position, {:id => nil, :maxlength => 3, :size => 5, 'data-position' => image.position, 'data-url' => order_images_image_path(image)}

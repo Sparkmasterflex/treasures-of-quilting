@@ -1,6 +1,7 @@
-.formfield
-  = w.label :widget, "Widget type"
-  = w.select :widget, Widget::Template.options_for_select
-#widget-content
-  /%p Please select a widget type.
-  = render :partial => '/widgets/content_fields/select_page', :locals => {:w => w}
+.widget
+  = w.hidden_field :content, {:value => nil, 'data-object' => "#{parent_object(params)}"}
+  .formfield
+    = w.label :widget, "Select Type"
+    = w.select :widget, Widget::Template.options_for_select
+  .widget-content
+    %p Please select a widget type.

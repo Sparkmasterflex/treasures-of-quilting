@@ -1,2 +1,2 @@
 .formfield
-  = w.select :content, options_for_select(Widget.available_featured_pages(w.object))
+  = select_tag :content_select, options_for_select(Widget.available_featured_pages(object))

@@ -1,3 +1,3 @@
 %h4= widget.specific_content.page_title
-= image_tag widget.specific_content.images.first_enabled.url(:sm_preview), :class => 'floatLeft' unless widget.specific_content.images.blank?
+= image_tag widget.specific_content.images.first_enabled.url(params[:action] == 'show' ? :sm_preview : :thumb), :class => 'floatLeft' unless widget.specific_content.images.blank?
 %p{:class => "#{widget.specific_content.images.blank? ? '' : 'floatRight'}"}= widget.specific_content.preview_text

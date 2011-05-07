@@ -31,14 +31,18 @@ Toq::Application.routes.draw do
     member do
       put :update_status
       put :update_caption
-      put :order
+      put :order_images
     end
   end
 
   resources :widgets do
     member do
       put :update_status
-      put :order
+      put :order_widgets
+    end
+
+    collection do
+      get :update_content
     end
   end
 

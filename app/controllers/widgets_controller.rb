@@ -17,4 +17,22 @@ class WidgetsController < ApplicationController
       end
     end
   end
+
+  def update_status
+    enable(Widget.find(params[:id]))
+  end
+
+  def order_widgets
+    order(Widget.find(params[:id]))
+  end
+
+  def update_content
+    widget = params[:widget].to_i
+    obj_arr = params[:object].split('_')
+    object = obj_arr[0].constantize.find(obj_arr[1])
+    respond_to do |format|
+      format.html {}
+      format.js { render :partial => "/widgets/content_fields/#{Widget::Template::CONTENT[widget]}", :locals => {:object => object} }
+    end
+  end
 end

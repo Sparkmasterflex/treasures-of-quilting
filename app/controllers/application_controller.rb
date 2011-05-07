@@ -6,6 +6,37 @@ class ApplicationController < ActionController::Base
 
   layout 'application'
 
+  def enable(obj)
+    @toggle = obj
+    @object = obj.class === Image ? @toggle.attachable_type.constantize.find(@toggle.attachable_id) :
+                                      @toggle.gadget_type.constantize.find(@toggle.gadget_id)
+    enabled = params[:enable] == 'true'
+    href = obj.class === Image ? '/images/slideshow_edit' : '/widgets/page_widgets'
+
+    respond_to do |format|
+      format.html {}
+      format.js do
+        @toggle.update_attribute('enabled', enabled)
+        render :partial => href, :locals => {:object => @object}
+      end
+    end
+  end
+
+  def order(obj)
+    @toggle = obj
+    object = obj.is_a?(Image) ? @toggle.attachable_type.constantize.find(@toggle.attachable_id) :
+                                  @toggle.gadget_type.constantize.find(@toggle.gadget_id)
+    href = obj.is_a?(Image) ? '/images/slideshow_edit' : '/widgets/page_widgets'
+
+    respond_to do |format|
+      format.html {}
+      format.js do
+        @toggle.reorder(object, params[:sending].to_i)
+        render :partial => href, :locals => {:object => object.reload}
+      end
+    end
+  end
+
   private
 
   def current_user_session

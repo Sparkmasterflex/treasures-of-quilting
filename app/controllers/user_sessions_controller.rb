@@ -15,7 +15,7 @@ class UserSessionsController < ApplicationController
       flash[:success] = "Successfully logged in"
       redirect_to dashboard_path
     else
-      render :action => :new
+      render :layout => 'login', :action => :new
     end
   end
 

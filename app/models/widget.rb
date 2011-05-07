@@ -15,6 +15,9 @@ class Widget < ActiveRecord::Base
 
     TEMPLATES = {SLIDESHOW => 'js_slideshow', CONTACT => 'contact_form', NEW_PRODUCTS => 'new_products', FEATURED_PRODUCTS => 'featured_products',
                  CALCULATOR => 'calculator', FEATURED_PAGE => 'featured_page', GALLERY => 'js_gallery'}
+
+    CONTENT = { CONTACT => 'contact_form', NEW_PRODUCTS => 'new_products', FEATURED_PRODUCTS => 'featured_products',
+                CALCULATOR => 'calculator', FEATURED_PAGE => 'select_page'}
     def self.options_for_select
       lbl = LABELS.reject { |key, value| [SLIDESHOW, GALLERY].include? key }.sort.unshift([nil, "Please Select"]).collect { |arr| arr.reverse }
     end
@@ -33,16 +36,22 @@ class Widget < ActiveRecord::Base
     options = {:order => :created_at}
     options.merge!({:condition => ['id != ?', page.id]}) if page.is_a?(Subpage)
 
-    Webpage.find(:all, :conditions => web_conditions).each { |web| available.merge!({web.page_title => "Webpage_#{web.id}"}) }
-    Subpage.find(:all, options).each { |sub| available.merge!({sub.page_title => "Subpage_#{sub.id}"}) }
+    Webpage.find(:all, :conditions => web_conditions).each { |web| available.merge!({ "Webpage_#{web.id}" => web.page_title}) }
+    Subpage.find(:all, options).each { |sub| available.merge!({ "Subpage_#{sub.id}" => sub.page_title }) }
 
-    available
+    available.sort.unshift([nil, "Please Select"]).collect { |arr| arr.reverse }
   end
 
   def specific_content
     case self.widget
       when Template::FEATURED_PAGE then self.content.split("_").first.constantize.find(self.content.split("_").last.to_i)
     end
+  end
+
+  def reorder(obj, to)
+    others = obj.widgets.reject { |w| w.id == self.id }.sort_by { |o| o.position  }
+    self.update_attribute('position', to)
+    others.each { |o| o.update_attribute('position', to += 1) if o.position >= to }
   end
   
   private
