@@ -623,3 +623,34 @@ Rendered shared/_website_sidebar.html.haml (15.3ms)
 Rendered layouts/_navigation.html.haml (2.2ms)
 Rendered webpages/show.html.haml within layouts/application (189.1ms)
 Completed 200 OK in 236ms (Views: 182.9ms | ActiveRecord: 11.3ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateWebpages (20110328222359)
+Migrating to CreateSubpages (20110328222428)
+Migrating to CreateUsers (20110328223724)
+Migrating to CreateImages (20110328232023)
+Migrating to CreateContacts (20110328232226)
+Migrating to IsRoot (20110402031810)
+Migrating to CreateWidgets (20110403190256)
+Migrating to AddPreviewText (20110409161859)
+Migrating to PageEnabled (20110410164321)
+Migrating to UserRole (20110508033638)
+  [1m[35mSQL (181.8ms)[0m  ALTER TABLE `users` ADD `role` int(11) DEFAULT 0 NOT NULL
+  [1m[36mSQL (196.5ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110508033638')
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.9ms)[0m  describe `contacts`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `contacts`[0m
+  [1m[35mSQL (2.2ms)[0m  describe `images`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `images`[0m
+  [1m[35mSQL (2.1ms)[0m  describe `subpages`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `subpages`[0m
+  [1m[35mSQL (2.4ms)[0m  describe `users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (2.2ms)[0m  describe `webpages`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `webpages`[0m
+  [1m[35mSQL (2.1ms)[0m  describe `widgets`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `widgets`[0m

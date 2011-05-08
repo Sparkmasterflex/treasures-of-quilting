@@ -5,7 +5,7 @@ Toq::Application.routes.draw do
   match '/logout' => 'user_sessions#destroy', :as => :logout
   match '/editor/' => 'webpages#dashboard', :as => :dashboard
 
-  resources :users, :path => '/users'
+  resources :users, :path => '/editor/users'
   resources :contacts, :path => '/editor/contacts'
 
   resources :webpages, :path => '/editor/webpages' do    

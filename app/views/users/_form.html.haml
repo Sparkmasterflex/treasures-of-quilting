@@ -1,0 +1,25 @@
+.formfield
+  = f.label :first_name
+  = f.text_field :first_name
+.formfield
+  = f.label :last_name
+  = f.text_field :last_name
+.formfield
+  = f.label :login, "Username"
+  = f.text_field :login
+.formfield
+  = f.label :role, "User Permissions"
+  = f.select :role, User::Roles.options_for_select
+.formfield
+  = f.label :email
+  = f.text_field :email
+.formfield
+  = f.label :password
+  = f.password_field :password
+.formfield
+  = f.label :password_confirmation
+  = f.password_field :password_confirmation
+- f.fields_for :images do |img|
+  .formfield
+    = img.label :image
+    = img.file_field :image

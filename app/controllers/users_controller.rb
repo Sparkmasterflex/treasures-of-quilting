@@ -1,27 +1,33 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user
+  before_filter :editor_navigation
 
   def new
-    @user = User.new
+    @new_user = User.new
+    @new_user.images.build
+    editor_layout
   end
 
   def create
-    @user = User.new(params[:user])
+    @new_user = User.new(params[:user])
+    @new_user.images.build(params[:images]) if params[:images]
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_back_or_default account_url
     else
-      render :action => :new
+      editor_layout(:new)
     end
   end
 
   def show
     @user = @current_user
+    editor_layout
   end
 
   def edit
-    @user = @current_user
+    @user = User.find(params[:id])
+    @user.images.build if @user.images.blank?
+    editor_layout
   end
 
   def update
@@ -30,7 +36,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Account updated!"
       redirect_to account_url
     else
-      render :action => :edit
+      editor_layout(:edit)
     end
   end
 end

@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
     @images = Image.all
   end
 
-  def editor_layout
-    render :layout => 'editor'
+  def editor_layout(action=nil)
+    render :layout => 'editor', :action => action
   end
 end
