@@ -5,7 +5,7 @@
       %ul.image-links
         %li= link_to "Enable for Slideshow", update_status_image_path(image), {:class => "add icon hidden#{disabled_link(image, 'enable')}", :title => "Enable Image"}
         %li= link_to "Disable for Slideshow", update_status_image_path(image), {:class => "remove icon hidden#{disabled_link(image, 'disable')}", :title => "Disable Image"}
-        %li= link_to "Delete", image_path(image), {:class => "delete icon hidden", :title => "Delete Image"}      
+        %li= link_to "Delete", image_path(image), {:class => "delete icon hidden", :title => "Delete Image", 'data-delete' => 'image'}
       .formfield
         = label_tag :caption, 'Image caption', {:id => nil}
         = text_field_tag :caption, image.caption, {:size => 19, 'data-caption' => image.caption, 'data-url' => update_caption_image_path(image) }

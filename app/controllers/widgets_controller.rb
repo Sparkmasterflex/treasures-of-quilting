@@ -35,4 +35,16 @@ class WidgetsController < ApplicationController
       format.js { render :partial => "/widgets/content_fields/#{Widget::Template::CONTENT[widget]}", :locals => {:object => object} }
     end
   end
+
+  def destroy
+    @widget = Widget.destroy(params[:id])
+
+    respond_to do |format|
+      format.html do
+        flash[:success] = "Widget has been deleted."
+        redirect_to :back
+      end
+      format.js { render :nothing => true }
+    end
+  end
 end

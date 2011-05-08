@@ -15,6 +15,7 @@ class UserSessionsController < ApplicationController
       flash[:success] = "Successfully logged in"
       redirect_to dashboard_path
     else
+      flash[:error] = "Your username and password were incorrect."
       render :layout => 'login', :action => :new
     end
   end

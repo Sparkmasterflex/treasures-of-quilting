@@ -4,7 +4,7 @@
   %head
     %title= "#{AppSystem::NAME} editor"
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
-    = stylesheet_link_tag 'html5_reset', 'editor'
+    = stylesheet_link_tag 'editor'
     = javascript_include_tag 'prototype', 'effects','editor', 'dynamic-fields'
     - javascript_tag do
       = yield :jstemplates

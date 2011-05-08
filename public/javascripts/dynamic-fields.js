@@ -20,7 +20,7 @@ function addNestedItem(e) {
 
   new Effect.Highlight(target, {
     afterFinish: function(effect) {
-      //effect.element.down('.remove_nested_item').observe('click', removeNestedItem);
+      effect.element.down('.remove_nested_item').observe('click', removeNestedItem);
       if(class_name == "widget") effect.element.down('select').observe('change', updateWidgetValue);
     }
   });

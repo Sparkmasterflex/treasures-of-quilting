@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
 
   def enable(obj)
     @toggle = obj
-    @object = obj.class === Image ? @toggle.attachable_type.constantize.find(@toggle.attachable_id) :
+    @object = obj.class == Image ? @toggle.attachable_type.constantize.find(@toggle.attachable_id) :
                                       @toggle.gadget_type.constantize.find(@toggle.gadget_id)
     enabled = params[:enable] == 'true'
-    href = obj.class === Image ? '/images/slideshow_edit' : '/widgets/page_widgets'
+    href = obj.class == Image ? '/images/slideshow_edit' : '/widgets/page_widgets'
 
     respond_to do |format|
       format.html {}

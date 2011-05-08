@@ -1,6 +1,5 @@
 document.observe('dom:loaded', function(){
   observeImageElements();
-  $$('.delete').invoke('observe', 'click', ajaxDestroy);
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
   $$('.style').invoke('observe', 'click', addStyle);
@@ -8,10 +7,11 @@ document.observe('dom:loaded', function(){
 });
 
 function observeImageElements() {
-  if($('slides')) {
+  if($('slides') || $('page-widgets')) {
     $$('li a.add', 'li a.remove').invoke('observe', 'click', setImageState);
     $$('.rightcol .formfield input[type=text]').invoke('observe', 'blur', upDateImages);
-    $('image_display').observe('change', setImageDisplay);    
+    $('image_display').observe('change', setImageDisplay);
+    $$('.delete').invoke('observe', 'click', ajaxDestroy);
   }
 
   /*
@@ -137,8 +137,8 @@ function enablePage(e) {
 function ajaxDestroy(e) {
   e.stop();
   var el = Event.element(e),
-      imgNum = el.readAttribute('href').gsub(/\/images\//, ''),
-      target = el.up('li#image-' + imgNum);
+      num = el.readAttribute('href').gsub(/\/(images|widgets)\//, ''),
+      target = el.up('li#' + el.readAttribute('data-delete') + '-' + num);
 
 if (confirm('Are you sure you want to remove this?\nThis action cannot be undone.')) {
     removeFromDom(target, function() {
@@ -151,6 +151,15 @@ if (confirm('Are you sure you want to remove this?\nThis action cannot be undone
   }
 }
 
+function removeFromDom(target, afterfinish) {
+  new Effect.Parallel([
+    new Effect.Opacity(target, {from: 1.0, to: 0}),
+    new Effect.Highlight(target) ], {
+      duration: 1,
+      afterFinish: afterfinish
+  });
+}
+
 function addStyle(e) {
   e.stop();
   var el = Event.element(e),
@@ -159,7 +168,7 @@ function addStyle(e) {
       selected = text.value.getRangeAt,
       add = style == '#strong' ? '<strong></strong>' : '<em></em>';
 
-  alert(style)
+  //alert(style)
   //text.insert(add);
 }
 
@@ -194,7 +203,5 @@ function setWidgetContent(e) {
   var el = Event.element(e),
       parent = el.up('.widget'),
       hidden = parent.down('input[type=hidden]');
-  alert('hello');
-  alert(el.value);
   hidden.value = el.value;
 }

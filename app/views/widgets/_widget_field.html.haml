@@ -3,5 +3,6 @@
   .formfield
     = w.label :widget, "Select Type"
     = w.select :widget, Widget::Template.options_for_select
+  = link_to_destroy_nested(w, "Remove Widget", w.object.new_record? ? "#widget" : widget_path(w.object))
   .widget-content
     %p Please select a widget type.

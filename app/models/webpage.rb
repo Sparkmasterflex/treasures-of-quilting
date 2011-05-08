@@ -29,7 +29,7 @@ class Webpage < ActiveRecord::Base
     end
 
     def for_page(enabled=[true,false], limit=nil)
-      find(:all, :conditions => ['widget NOT IN (?) AND enabled IN (?)', [Widget::Template::GALLERY, Widget::Template::SLIDESHOW], enabled], :limit => limit)
+      find(:all, :conditions => ['widget NOT IN (?) AND enabled IN (?)', [Widget::Template::GALLERY, Widget::Template::SLIDESHOW], enabled], :order => :position, :limit => limit)
     end
   end
 
