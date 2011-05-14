@@ -1,0 +1,13 @@
+%h4= subpage.page_title
+.formfield.clearfix
+  = label_tag :webpage_id, "Parent Page"
+  %p= subpage.webpage.page_title
+.formfield
+  = label_tag :template
+  %p= AppSystem::Templates::LABELS[subpage.template]
+.formfield
+  = label_tag :preview_text
+  %p= add_html_tags(subpage.preview_text)
+.formfield
+  = label_tag :text, "Main Body Text"
+  %p= add_html_tags(subpage.text)

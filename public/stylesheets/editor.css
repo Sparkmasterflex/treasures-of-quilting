@@ -88,11 +88,20 @@ ul.collapse li {
 .edit {
   background: url(images/silk/pencil.png) no-repeat left center; }
 
+.new {
+  background: url(images/silk/page_add.png) no-repeat left center; }
+
 .add {
   background: url(images/silk/image_add.png) no-repeat left center; }
 
 .remove {
   background: url(images/silk/image_delete.png) no-repeat left center; }
+
+.widget.add {
+  background: url(images/silk/plugin_add.png) no-repeat left center; }
+
+.widget.remove {
+  background: url(images/silk/plugin_disabled.png) no-repeat left center; }
 
 .delete {
   background: url(images/silk/cross.png) no-repeat left center; }
@@ -315,6 +324,9 @@ body#editor {
             border: 1px solid #666;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px; }
+            body#editor section#content #main-content .rightcol ul#slides li p {
+              font-size: 1em;
+              margin-bottom: 0.1em; }
             body#editor section#content #main-content .rightcol ul#slides li img, body#editor section#content #main-content .rightcol ul#slides li ul.image-links {
               float: left; }
               body#editor section#content #main-content .rightcol ul#slides li img li, body#editor section#content #main-content .rightcol ul#slides li ul.image-links li {
@@ -344,7 +356,9 @@ body#editor {
               text-align: center; }
         body#editor section#content #main-content .rightcol p {
           line-height: 1.5em;
-          margin-bottom: 0.63em; }
+          margin-bottom: 0.63em;
+          font-size: 1.4em;
+          color: #000; }
           body#editor section#content #main-content .rightcol p a {
             float: right; }
         body#editor section#content #main-content .rightcol .formfield.display {

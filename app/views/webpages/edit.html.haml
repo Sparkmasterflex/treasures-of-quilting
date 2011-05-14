@@ -2,9 +2,13 @@
   %h3 Content
   = show_notice
   - form_for @webpage, :url => webpage_path(@webpage), :html => {:method => :put, :multipart => true} do |f|
-    = render :partial => 'form', :locals => {:f => f}
-    .formfield
-      = f.submit "Update #{@webpage.page_alias.capitalize} Page"
+    = render_error_msg(@webpage)
+    - if can?(:edit, @webpage)
+      = render :partial => 'form', :locals => {:f => f}
+      .formfield
+        = f.submit "Update #{@webpage.page_alias.capitalize} Page"
+    - else
+      = render :partial => 'view', :locals => {:webpage => @webpage}
 .rightcol
   = render :partial => '/shared/page_status', :locals => {:object => @webpage}
   #page-images

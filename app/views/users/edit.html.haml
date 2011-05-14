@@ -1,6 +1,7 @@
 .leftcol
   %h3 Edit User
-  - form_for @user, :url => users_path, :html => {:method => :post, :multipart => true} do |f|
+  - form_for @user, :url => user_path(@user), :html => {:method => :put, :multipart => true} do |f|
+    = render_error_msg(@user)
     = render :partial => 'form', :locals => {:f => f, :user => current_user}
     .formfield
       = f.submit "Update User"

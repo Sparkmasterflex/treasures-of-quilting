@@ -1,0 +1,5 @@
+#error-explanation
+  %h4 The Following Errors Were Caught
+  %ul
+    - object.errors.full_messages.each do |msg|
+      %li= msg

@@ -1,9 +1,12 @@
 .leftcol
   %h3 Content
   - form_for @subpage, :url => webpage_subpage_path(@subpage), :html => {:method => :put, :multipart => true} do |f|
-    = render :partial => 'form', :locals => {:f => f}
-    .formfield
-      = f.submit "Update #{@subpage.page_alias.capitalize} Page"
+    - if can?(:edit, @subpage)
+      = render :partial => 'form', :locals => {:f => f}
+      .formfield
+        = f.submit "Update #{@subpage.page_alias.capitalize} Page"
+    - else
+      = render :partial => 'view', :locals => {:subpage => @subpage}
 .rightcol
   = render :partial => '/shared/page_status', :locals => {:object => @subpage}
   #page-images

@@ -1,7 +1,8 @@
 .leftcol
   %h3 Content
   - form_for @webpage, :url => webpages_path, :html => {:method => :post, :multipart => true} do |f|
-    = render :partial => 'form', :locals => {:f => f}
+    = render_error_msg(@webpage)
+    = render :partial => 'form', :locals => {:f => f, :webpage => @webpage}
     .formfield
       = f.submit "Create Webpage"
 .rightcol

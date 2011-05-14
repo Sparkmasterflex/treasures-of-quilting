@@ -1,7 +1,7 @@
 .leftcol
   %h2 Content
   - form_for @subpage, :url => webpage_subpages_path, :html => {:method => :post, :multipart => true} do |f|
-    = render :partial => 'form', :locals => {:f => f}
+    = render :partial => 'form', :locals => {:f => f, :subpage => @subpage}
     .formfield
       = f.submit "Create Subpage"
 .rightcol

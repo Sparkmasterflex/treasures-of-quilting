@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
     SUPER_ADMIN  = 30
 
     LABELS = {DEFAULT => 'Viewer', MANAGER => 'Manager', ADMIN => 'Administrator', SUPER_ADMIN => 'Super Administrator'}
+    IDS = {DEFAULT => 'viewer', MANAGER => 'manager', ADMIN => 'admin', SUPER_ADMIN => 'super'}
 
     def self.options_for_select
       LABELS.sort.unshift([nil, "Please Select"]).collect { |arr| arr.reverse }
@@ -16,14 +17,12 @@ class User < ActiveRecord::Base
 
   has_many :images, :as => :attachable
 
-  attr_accessor :password
-  attr_accessor :password_confirmation
-
   accepts_nested_attributes_for :images
 
   validates :first_name, :last_name, :role, :presence => true
   validates :email, :presence => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-  validates :password, :password_confirmation, :presence => true, :length => { :within => 6..15 }
+  validates :password, :password_confirmation, :presence => true, :if => lambda { |pass| new_record? }
+  #validates :password, :password_confirmation, :length => { :within => 6..15 }, :unless => lambda { |user| user.password.blank? }
 
 
   def last_updated

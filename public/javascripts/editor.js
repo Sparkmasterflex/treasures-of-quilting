@@ -1,9 +1,11 @@
 document.observe('dom:loaded', function(){
-  observeImageElements();
+  if($('admin-user') || $('super-user')) observeImageElements();
+  collapseHelp();
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
   $$('.style').invoke('observe', 'click', addStyle);
-  if(findSelected($('webpage_template')) != '10') $('widgets').hide();
+  if($('webpage_template') && findSelected($('webpage_template')) != '10')
+    $('widgets').hide();
 });
 
 function observeImageElements() {
@@ -13,7 +15,9 @@ function observeImageElements() {
     $('image_display').observe('change', setImageDisplay);
     $$('.delete').invoke('observe', 'click', ajaxDestroy);
   }
+}
 
+function collapseHelp() {
   /*
    * Toggle help elements (hide/show)
    **/
@@ -40,6 +44,7 @@ function setImageState(e) {
       parameters: {enable: enable},
       onComplete: function(transport) {
         observeImageElements();
+        collapseHelp();
       }
     });
   }
@@ -58,6 +63,7 @@ function upDateImages(e) {
       parameters: {sending: val},
       onComplete: function(transport) {
         observeImageElements();
+        collapseHelp();
       }
     });
   }
@@ -81,6 +87,7 @@ function attachToFeature(e) {
           if(json.valid) {
             refresh.replace(json.output);
             observeImageElements();
+            collapseHelp();
           }
         }
       });

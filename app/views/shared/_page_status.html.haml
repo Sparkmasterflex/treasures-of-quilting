@@ -5,9 +5,10 @@
       %li= "Created: #{object.created_at.strftime('%m/%d/%Y')}"
       %li= "Last Updated: #{object.created_at.strftime('%m/%d/%Y')}"
       %li= "Updated By: #{object.last_updated_by}"
-      - if object.is_a?(Webpage)
-        %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_path(object), {:class => "access icon #{object.link_class}", 'data-page' => object.id }
-      - else
-        %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_subpage_path(object.webpage, object), {:class => "access icon #{object.link_class}", 'data-page' => "#{object.webpage_id}-#{object.id}" }
+      - if can?(:manage, Webpage)
+        - if object.is_a?(Webpage)
+          %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_path(object), {:class => "access icon #{object.link_class}", 'data-page' => object.id }
+        - else
+          %li= link_to "Set Page to #{object.enabled ? 'Hidden' : 'Visible'}", edit_webpage_subpage_path(object.webpage, object), {:class => "access icon #{object.link_class}", 'data-page' => "#{object.webpage_id}-#{object.id}" }
   - else
     %p= "New #{object.class.to_s}"

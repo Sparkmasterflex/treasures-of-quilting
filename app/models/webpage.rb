@@ -106,7 +106,7 @@ class Webpage < ActiveRecord::Base
   def unset_current_root
     if self.is_root
       current = Webpage.find(:first, :conditions => {:is_root => true})
-      current.update_attribute('is_root', false) unless current.nil?
+      current.update_attribute('is_root', false) unless current.nil? || current == self
     end
   end
 end

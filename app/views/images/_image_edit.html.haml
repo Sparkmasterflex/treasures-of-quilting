@@ -2,13 +2,20 @@
   %li{:id => "image-#{image.id}"}
     .img-details.clearfix
       = image_tag image.attachment.url(:thumb), {:alt => image.attachment_file_name}
-      %ul.image-links
-        %li= link_to "Enable for Slideshow", update_status_image_path(image), {:class => "add icon hidden#{disabled_link(image, 'enable')}", :title => "Enable Image"}
-        %li= link_to "Disable for Slideshow", update_status_image_path(image), {:class => "remove icon hidden#{disabled_link(image, 'disable')}", :title => "Disable Image"}
-        %li= link_to "Delete", image_path(image), {:class => "delete icon hidden", :title => "Delete Image", 'data-delete' => 'image'}
+      - if can?(:manage, Image)
+        %ul.image-links
+          %li= link_to "Enable for Slideshow", update_status_image_path(image), {:class => "add icon hidden#{disabled_link(image, 'enable')}", :title => "Enable Image"}
+          %li= link_to "Disable for Slideshow", update_status_image_path(image), {:class => "remove icon hidden#{disabled_link(image, 'disable')}", :title => "Disable Image"}
+          %li= link_to "Delete", image_path(image), {:class => "delete icon hidden", :title => "Delete Image", 'data-delete' => 'image'}
       .formfield
         = label_tag :caption, 'Image caption', {:id => nil}
-        = text_field_tag :caption, image.caption, {:size => 19, 'data-caption' => image.caption, 'data-url' => update_caption_image_path(image) }
+        - if can?(:manage, Image)
+          = text_field_tag :caption, image.caption, {:size => 19, 'data-caption' => image.caption, 'data-url' => update_caption_image_path(image) }
+        - else
+          %p= image.caption
       .formfield
         = label_tag 'image_position', "Position", {:id => nil}
-        = text_field_tag 'image_position', image.position, {:id => nil, :maxlength => 3, :size => 5, 'data-position' => image.position, 'data-url' => order_images_image_path(image)}
+        - if can?(:manage, Image)
+          = text_field_tag 'image_position', image.position, {:id => nil, :maxlength => 3, :size => 5, 'data-position' => image.position, 'data-url' => order_images_image_path(image)}
+        - else
+          %p= image.position

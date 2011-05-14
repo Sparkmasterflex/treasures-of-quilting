@@ -16,7 +16,7 @@
           %h2= "Edit #{AppSystem::APP_NAME} Content"
         %nav
           %ul
-            %li= "Welcome, #{current_user.first_name}"
+            %li{:id => "#{User::Roles::IDS[current_user.role]}-user"}= "Welcome, #{current_user.first_name}"
             %li= link_to 'View Website', '/', {:rel => 'external'}
             %li= link_to 'Log Out', logout_path
     %section#content.clearfix
@@ -26,12 +26,14 @@
         .section
           = link_to 'Webpages', webpages_path
           %ul
-            %li= link_to "New Webpage", new_webpage_path
+            - if can?(:create, Webpage)
+              %li= link_to "New Webpage", new_webpage_path, {:class => 'new icon'}
             - @webpages.each do |web|
               %li
                 = link_to web.page_alias, edit_webpage_path(web), {:class => web.link_class, 'data-page' => web.id }
                 %ul
-                  %li= link_to "New Subpage", new_webpage_subpage_path(web), {:class => web.link_class, 'data-page' => web.id }
+                  - if can?(:create, Subpage)
+                    %li= link_to "New Subpage", new_webpage_subpage_path(web), {:class => "#{web.link_class} new icon", 'data-page' => web.id }
                   - web.subpages.each do |sub|
                     %li= link_to sub.page_alias, edit_webpage_subpage_path(web, sub), {:class => sub.link_class, 'data-page' => "#{web.id}-#{sub.id}" }
       #main-content

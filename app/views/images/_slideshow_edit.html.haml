@@ -6,18 +6,19 @@
     - else
       %ul#slides
         = render :partial => '/images/image_edit', :collection => ordered_images(object.images), :as => :image, :locals => {:object => object}
-    %h3 Image Display
-    %p.clearfix= raw "#{link_to "Help", '#help', {:class => 'help icon hidden', 'data-help' => 'img-help'}} Select a way to display the images attached to this #{object.class.to_s.downcase}."
-    .formfield.display
-      = label_tag :image_display, "Display Images Via"
-      = select_tag :image_display, options_for_select({"Single Image" => 0, "Slideshow" => Widget::Template::SLIDESHOW, "Gallery" => Widget::Template::GALLERY}, object.widgets.js_slideshow ? Widget::Template::SLIDESHOW : object.widgets.js_gallery ? Widget::Template::GALLERY : 0), :data_type => "#{object.id}-#{object.class.to_s}"
-    %ul#img-help.collapse
-      %li
-        %strong Single Image
-        will display the first enabled image based on the positions.
-      %li 
-        %strong Slideshow
-        will create a slideshow to display the enabled images in order by positions.
-      %li
-        %strong Gallery
-        will display all enabled images as thumbnails and will allow user to click and to view. Thumbnails will be ordered by positions.
+    - if can?(:manage, Image)
+      %h3 Image Display
+      %p.clearfix= raw "#{link_to "Help", '#help', {:class => 'help icon hidden', 'data-help' => 'img-help'}} Select a way to display the images attached to this #{object.class.to_s.downcase}."
+      .formfield.display
+        = label_tag :image_display, "Display Images Via"
+        = select_tag :image_display, options_for_select({"Single Image" => 0, "Slideshow" => Widget::Template::SLIDESHOW, "Gallery" => Widget::Template::GALLERY}, object.widgets.js_slideshow ? Widget::Template::SLIDESHOW : object.widgets.js_gallery ? Widget::Template::GALLERY : 0), :data_type => "#{object.id}-#{object.class.to_s}"
+      %ul#img-help.collapse
+        %li
+          %strong Single Image
+          will display the first enabled image based on the positions.
+        %li
+          %strong Slideshow
+          will create a slideshow to display the enabled images in order by positions.
+        %li
+          %strong Gallery
+          will display all enabled images as thumbnails and will allow user to click and to view. Thumbnails will be ordered by positions.

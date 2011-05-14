@@ -92,8 +92,11 @@ p {
 }
 
 .edit { background: url(images/silk/pencil.png) no-repeat left center; }
+.new { background: url(images/silk/page_add.png) no-repeat left center; }
 .add { background: url(images/silk/image_add.png) no-repeat left center; }
 .remove { background: url(images/silk/image_delete.png) no-repeat left center; }
+.widget.add { background: url(images/silk/plugin_add.png) no-repeat left center; }
+.widget.remove { background: url(images/silk/plugin_disabled.png) no-repeat left center; }
 .delete { background: url(images/silk/cross.png) no-repeat left center; }
 .help { background: url(images/silk/help.png) no-repeat left center; }
 .access { background: url(images/silk/eye.png) no-repeat left center; }
@@ -281,6 +284,7 @@ body#editor {
             background: #f1f1f1;
             border: 1px solid #666;
             @include rounded(5px);
+            p { font-size: 1em; margin-bottom: 0.1em; }
             img, ul.image-links { float: left;
               li {
                 margin:0 0.2em 0.13em;
@@ -307,7 +311,10 @@ body#editor {
           }
         }
         p {
-          line-height: 1.5em; margin-bottom: 0.63em;
+          line-height: 1.5em;
+          margin-bottom: 0.63em;
+          font-size: 1.4em;
+          color: #000;
           a { float: right; }
         }
         .formfield.display {

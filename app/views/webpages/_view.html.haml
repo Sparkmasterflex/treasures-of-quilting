@@ -1,0 +1,10 @@
+%h4= webpage.page_title
+.formfield
+  = label_tag :template
+  %p= AppSystem::Templates::LABELS[webpage.template]
+.formfield
+  = label_tag :preview_text
+  %p= add_html_tags(webpage.preview_text)
+.formfield
+  = label_tag :text, "Main Body Text"
+  %p= add_html_tags(webpage.text)
