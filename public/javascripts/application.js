@@ -37,6 +37,12 @@ function setupSubpagePreview() {
   if($('subpages-link')) {
     $$('.drop-down').first().hide();
     $('subpages-link').observe('click', displayDropDown);
+    $('sub-page-desc').select('li').invoke('observe', 'click', function(e){
+      var el = Event.element(e),
+      		li = el.up('li') || el,
+      		href = li.down('a').readAttribute('href');
+      window.location = href;
+    });
   }
 }
 

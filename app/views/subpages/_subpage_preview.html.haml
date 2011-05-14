@@ -8,7 +8,7 @@
           %h3= web.page_title
           %menu
             = render :partial => '/subpages/subpage_li', :collection => web.subpages
-  = render_pagination(subpages, {:controller => "subpages", :action => 'subpages_preview'.to_s, :webpage_id => object.id, :id => nil, :right => false})
+  = render_pagination(subpages, {:controller => "subpages", :action => 'subpages_preview', :webpage_id => object.id, :id => nil, :right => false})
 .section
   %menu#sub-page-desc.clearfix
     = render :partial => '/subpages/subpage_desc', :collection => subpages

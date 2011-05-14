@@ -28,7 +28,6 @@ class SubpagesController < ApplicationController
   end
 
   def edit
-    #@webpages = Webpage.all
     @subpage = Subpage.find(params[:id])
     @images = @subpage.images.build
     render :layout => 'editor'
@@ -44,6 +43,15 @@ class SubpagesController < ApplicationController
       flash[:error] = "We found the following errors."
     end
     render :action => :edit, :layout => 'editor'
+  end
+  
+  def subpages_preview
+    webpage = Webpage.find(params[:webpage_id].to_i)
+    @subpages = webpage.subpages.paginate(:page => params[:page], :per_page => 4)
+    respond_to do |format|
+      format.html {}
+      format.js { render :partial => '/subpages/subpage_preview', :locals => {:object => webpage, :subpages => @subpages} }
+    end
   end
 
   def set_accessability
