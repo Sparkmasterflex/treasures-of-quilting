@@ -26,7 +26,7 @@
 .formfield
   = f.label :text, "Main Body Text"
   = f.text_area :text, :size => "40x20"
-- if can?(:manage, @subpage)
+- if can?(:manage, @webpage)
   #images
     %h4 Images
   = link_to 'Add an Image', '#image', {:class => "add icon add_nested_item", "data-update" => "images", "data-template" => "new_image", :title => "Add an Image"}

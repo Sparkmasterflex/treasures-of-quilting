@@ -54,6 +54,10 @@ class Subpage < ActiveRecord::Base
     user = User.find(self.updated_by)
     return "#{user.first_name} #{user.last_name}"
   end
+  
+  def current(page)
+    'current' if self.parent == page
+  end
 
   private
 

@@ -130,7 +130,7 @@ section#header{
       background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
       @include rounded(15px);
       li { float: left;
-        &.current a, a:hover {
+        a.current, a:hover {
           text-shadow: none;
           background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A81A46), to(#A81A46), color-stop(.4,#4D041B),color-stop(.6,#4D041B));
           background: -moz-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
@@ -380,12 +380,11 @@ footer {
     margin: 0 auto;
     padding-bottom: 1em;
     li { float: left; margin: 0 1.25em;
-      &.current a { color: #4D041B; text-decoration: underline; }
       a {
         color: #222;
         font-size: 1.5em;
         text-decoration: none;
-        &:hover {color: #4D041B; text-decoration: underline;}
+        &.current, &:hover {color: #4D041B; text-decoration: underline;}
       }
     }
   } /*---- /nav ul ----*/

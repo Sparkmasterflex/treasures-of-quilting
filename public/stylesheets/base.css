@@ -191,7 +191,7 @@ section#header {
       -moz-border-radius: 15px; }
       section#header header nav ul li {
         float: left; }
-        section#header header nav ul li.current a, section#header header nav ul li a:hover {
+        section#header header nav ul li a.current, section#header header nav ul li a:hover {
           text-shadow: none;
           background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a81a46), to(#a81a46), color-stop(0.4, #4d041b), color-stop(0.6, #4d041b));
           background: -moz-linear-gradient(0% 96% 90deg, #a81a46, #4d041b, #a81a46 100%); }
@@ -493,14 +493,11 @@ footer {
     footer nav ul li {
       float: left;
       margin: 0 1.25em; }
-      footer nav ul li.current a {
-        color: #4D041B;
-        text-decoration: underline; }
       footer nav ul li a {
         color: #222;
         font-size: 1.5em;
         text-decoration: none; }
-        footer nav ul li a:hover {
+        footer nav ul li a.current, footer nav ul li a:hover {
           color: #4D041B;
           text-decoration: underline; }
 

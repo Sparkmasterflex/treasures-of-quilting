@@ -1,6 +1,6 @@
 %ul
-  %li= link_to "Home", '/', {:class => "left-rounded"}
-  %li= link_to "Store", webpage_show_path({:page_alias => 'store'})
-  %li= link_to "Services", webpage_show_path({:page_alias => 'services'})
-  %li= link_to "About", webpage_show_path({:page_alias => 'about'})
-  %li= link_to 'Contact', webpage_show_path({:page_alias => 'contact'}), :class => 'right-rounded'
+  %li= link_to "Home", '/', {:class => "left-rounded #{object.current('treasures')}"}
+  %li= link_to "Store", webpage_show_path({:page_alias => 'store'}), {:class => object.current('store')}
+  %li= link_to "Services", webpage_show_path({:page_alias => 'services'}), {:class => object.current('services')}
+  %li= link_to "About", webpage_show_path({:page_alias => 'about'}), {:class => object.current('about')}
+  %li= link_to 'Contact', webpage_show_path({:page_alias => 'contact'}), :class => "right-rounded #{object.current('contact')}"

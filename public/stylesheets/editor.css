@@ -60,6 +60,9 @@ p {
       background: #D4ED91;
       border: 1px solid #385E0F; }
 
+a {
+  cursor: pointer; }
+
 .collapse {
   padding: 0.5em;
   background: #f1f1f1;
@@ -111,6 +114,12 @@ ul.collapse li {
 
 .access {
   background: url(images/silk/eye.png) no-repeat left center; }
+
+.expand {
+  background: url(images/silk/collapse.png) no-repeat left center; }
+
+.collapse {
+  background: url(images/silk/collapse.png) no-repeat left center; }
 
 section#header {
   height: 8.5em;
@@ -250,6 +259,36 @@ body#editor {
       body#editor section#content #main-content .leftcol {
         width: 47.5em;
         float: left; }
+        body#editor section#content #main-content .leftcol ul#top-level li {
+          padding: 1em;
+          margin: 1em 0;
+          background: -moz-linear-gradient(top, #44663f 0%, #627d4d 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #44663f), color-stop(100%, #627d4d));
+          border: 1px solid #000; }
+          body#editor section#content #main-content .leftcol ul#top-level li a {
+            display: block;
+            color: #fff;
+            margin-bottom: 0.25em;
+            text-shadow: 1px 1px 1px #333;
+            float: left; }
+            body#editor section#content #main-content .leftcol ul#top-level li a.icon {
+              float: right; }
+          body#editor section#content #main-content .leftcol ul#top-level li p {
+            font-size: 0.85em;
+            color: #fff;
+            line-height: 1.25em; }
+          body#editor section#content #main-content .leftcol ul#top-level li ul.subpages {
+            margin: 0.5em 0 0.5em 1em; }
+            body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li {
+              background: none;
+              padding: 0;
+              margin: 0;
+              border: none; }
+              body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li p {
+                font-size: 0.6em; }
+              body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li a {
+                font-size: 0.6em;
+                margin: 0; }
         body#editor section#content #main-content .leftcol .formfield {
           margin-bottom: 1.5em; }
           body#editor section#content #main-content .leftcol .formfield a.help {

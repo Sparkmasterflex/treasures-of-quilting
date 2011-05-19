@@ -68,6 +68,7 @@ p {
     &.success {background: #D4ED91; border: 1px solid #385E0F; }
   }
 }
+a { cursor: pointer; }
 
 .collapse {
   padding: 0.5em;
@@ -100,6 +101,8 @@ p {
 .delete { background: url(images/silk/cross.png) no-repeat left center; }
 .help { background: url(images/silk/help.png) no-repeat left center; }
 .access { background: url(images/silk/eye.png) no-repeat left center; }
+.expand { background: url(images/silk/expand.gif) no-repeat left center;}
+.collapse { background: url(images/silk/collapse.png) no-repeat left center;}
 
 section#header {
   height: 8.5em;
@@ -231,6 +234,37 @@ body#editor {
         }
       }
       .leftcol { width: 47.5em; float: left;
+        ul#top-level {
+          li {
+            padding: 1em;
+            margin: 1em 0;
+            @include green-gradient;
+            border: 1px solid #000;
+            a {
+              display: block;
+              color: #fff;
+              margin-bottom: 0.25em;
+              text-shadow: 1px 1px 1px #333;
+              float: left;
+              &.icon {
+                float: right;
+                
+              }
+            }
+            p { font-size: 0.85em; color: #fff; line-height: 1.25em; }
+            ul.subpages {
+              margin: 0.5em 0 0.5em 1em;
+              li {
+                background: none;
+                padding: 0;
+                margin: 0;
+                border: none;
+                p { font-size: 0.6em; }
+                a { font-size: 0.6em; margin: 0; }
+              }
+            }
+          }
+        }
         .formfield {
           a.help { float: right; width: 20px; padding: 0; margin: 0 10em 0 0; }
           margin-bottom: 1.5em;

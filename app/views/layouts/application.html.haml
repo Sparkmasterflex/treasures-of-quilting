@@ -14,11 +14,11 @@
           %h1= link_to "Treasures of Quilting", "/"
           %h2 Custom, Picture, Memory and T-Shirt Quilts and Quality Quilted Products.
       %nav
-        = render :partial => 'layouts/navigation', :locals => {:object => current_page(params)}
+        = render :partial => 'layouts/navigation', :locals => {:object => @webpage.nil? ? @subpage : @webpage}
   %section#content.clearfix
     .inner
-      = render :partial => 'shared/website_sidebar', :locals => {:web_pages => @web_pages}
+      = render :partial => 'shared/website_sidebar', :locals => {:webpages => @webpages}
       = yield
   %footer
     %nav
-      = render :partial => 'layouts/navigation', :locals => {:object => current_page(params)}
+      = render :partial => 'layouts/navigation', :locals => {:object => @webpage.nil? ? @subpage : @webpage}

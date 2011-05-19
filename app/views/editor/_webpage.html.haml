@@ -1,5 +1,9 @@
 %li
   = link_to webpage.page_alias.capitalize, edit_webpage_path(webpage)
-  - unless webpage.subpages.empty?
-    %ul.sub-pages
+  = link_to "Details", '#expand', {:class => "expand icon hidden"}
+  %ul.subpages
+    %li
+      %p= webpage.preview_text
+    %li= link_to "New Subpage", new_webpage_subpage_path(webpage), {:class => "#{webpage.link_class} new icon", 'data-page' => webpage.id }
+    - unless webpage.subpages.empty?
       = render :partial => '/editor/subpage', :collection => webpage.subpages

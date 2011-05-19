@@ -36,6 +36,15 @@
                     %li= link_to "New Subpage", new_webpage_subpage_path(web), {:class => "#{web.link_class} new icon", 'data-page' => web.id }
                   - web.subpages.each do |sub|
                     %li= link_to sub.page_alias, edit_webpage_subpage_path(web, sub), {:class => sub.link_class, 'data-page' => "#{web.id}-#{sub.id}" }
+        - if can?(:manage, User)
+          .section
+            %ul
+              - User.all.each do |u|
+                %li= link_to "Edit #{u.login}", edit_user_path(u)
+        - elsif can?(:edit, @current_user)
+          .section
+            %ul
+              %li= link_to "Edit Profile", edit_user_path(@current_user)
       #main-content
         = yield
     %section#footer

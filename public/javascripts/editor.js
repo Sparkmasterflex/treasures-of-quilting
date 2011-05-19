@@ -4,8 +4,11 @@ document.observe('dom:loaded', function(){
   $$('nav a.disabled').invoke('observe', 'click', enablePage);
   $$('a.access').invoke('observe', 'click', enablePage);
   $$('.style').invoke('observe', 'click', addStyle);
-  if($('webpage_template') && findSelected($('webpage_template')) != '10')
+  if($('webpage_template') && findSelected($('webpage_template')) != '10') {
     $('widgets').hide();
+    $$('a.widget').invoke('hide');
+  }
+  if($('top-level')) $$('ul.subpages').invoke('hide');
 });
 
 function observeImageElements() {
