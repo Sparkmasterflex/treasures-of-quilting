@@ -1,4 +1,5 @@
-@import "http://meyerweb.com/eric/tools/css/reset/reset.css";
+/*@import "http://meyerweb.com/eric/tools/css/reset/reset.css";*/
+@import url(/stylesheets/reset.css);
 header, section, footer, aside, nav, article, figure, menu, time {
   display: block; }
 
@@ -97,14 +98,23 @@ ul.collapse li {
 .add {
   background: url(images/silk/image_add.png) no-repeat left center; }
 
+.image {
+  background: url(images/silk/image.png) no-repeat left center; }
+
 .remove {
   background: url(images/silk/image_delete.png) no-repeat left center; }
+
+.widget {
+  background: url(images/silk/plugin.png) no-repeat left center; }
 
 .widget.add {
   background: url(images/silk/plugin_add.png) no-repeat left center; }
 
 .widget.remove {
   background: url(images/silk/plugin_disabled.png) no-repeat left center; }
+
+.template {
+  background: url(images/silk/layout_content.png) no-repeat left center; }
 
 .delete {
   background: url(images/silk/cross.png) no-repeat left center; }
@@ -116,9 +126,9 @@ ul.collapse li {
   background: url(images/silk/eye.png) no-repeat left center; }
 
 .expand {
-  background: url(images/silk/collapse.png) no-repeat left center; }
+  background: url(images/silk/expand.gif) no-repeat left center; }
 
-.collapse {
+.expand.collapse {
   background: url(images/silk/collapse.png) no-repeat left center; }
 
 section#header {
@@ -256,39 +266,51 @@ body#editor {
           body#editor section#content #main-content table tr td {
             font-size: 1.6em;
             padding: 0.63em 1em; }
+      body#editor section#content #main-content ul#top-level li {
+        position: relative;
+        padding: 1em;
+        margin: 1em 0;
+        background: -moz-linear-gradient(top, #44663f 0%, #627d4d 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #44663f), color-stop(100%, #627d4d));
+        border: 1px solid #000;
+        width: 75%; }
+        body#editor section#content #main-content ul#top-level li a {
+          display: block;
+          color: #fff;
+          margin-bottom: 0.25em;
+          text-shadow: 1px 1px 1px #333; }
+          body#editor section#content #main-content ul#top-level li a.expand {
+            position: absolute;
+            top: 0.31em;
+            right: 0.31em; }
+        body#editor section#content #main-content ul#top-level li p {
+          font-size: 0.85em;
+          color: #fff;
+          line-height: 1.25em; }
+        body#editor section#content #main-content ul#top-level li ul.subpages {
+          margin: 0.5em 0 0.5em 1em; }
+          body#editor section#content #main-content ul#top-level li ul.subpages li {
+            background: none;
+            padding: 0;
+            margin: 0.31em 0;
+            border: none;
+            font-size: 1em;
+            color: #fff; }
+            body#editor section#content #main-content ul#top-level li ul.subpages li.icon {
+              display: block;
+              padding: 3px 0 3px 20px; }
+            body#editor section#content #main-content ul#top-level li ul.subpages li.template {
+              background: url(images/silk/layout_content.png) no-repeat left center; }
+            body#editor section#content #main-content ul#top-level li ul.subpages li.image {
+              background: url(images/silk/image.png) no-repeat left center; }
+            body#editor section#content #main-content ul#top-level li ul.subpages li.widget {
+              background: url(images/silk/plugin.png) no-repeat left center; }
+            body#editor section#content #main-content ul#top-level li ul.subpages li a {
+              font-size: 1em;
+              margin: 0; }
       body#editor section#content #main-content .leftcol {
         width: 47.5em;
         float: left; }
-        body#editor section#content #main-content .leftcol ul#top-level li {
-          padding: 1em;
-          margin: 1em 0;
-          background: -moz-linear-gradient(top, #44663f 0%, #627d4d 100%);
-          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #44663f), color-stop(100%, #627d4d));
-          border: 1px solid #000; }
-          body#editor section#content #main-content .leftcol ul#top-level li a {
-            display: block;
-            color: #fff;
-            margin-bottom: 0.25em;
-            text-shadow: 1px 1px 1px #333;
-            float: left; }
-            body#editor section#content #main-content .leftcol ul#top-level li a.icon {
-              float: right; }
-          body#editor section#content #main-content .leftcol ul#top-level li p {
-            font-size: 0.85em;
-            color: #fff;
-            line-height: 1.25em; }
-          body#editor section#content #main-content .leftcol ul#top-level li ul.subpages {
-            margin: 0.5em 0 0.5em 1em; }
-            body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li {
-              background: none;
-              padding: 0;
-              margin: 0;
-              border: none; }
-              body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li p {
-                font-size: 0.6em; }
-              body#editor section#content #main-content .leftcol ul#top-level li ul.subpages li a {
-                font-size: 0.6em;
-                margin: 0; }
         body#editor section#content #main-content .leftcol .formfield {
           margin-bottom: 1.5em; }
           body#editor section#content #main-content .leftcol .formfield a.help {

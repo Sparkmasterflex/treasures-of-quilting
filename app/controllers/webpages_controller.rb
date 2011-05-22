@@ -5,7 +5,8 @@ class WebpagesController < ApplicationController
   before_filter :editor_layout, :only => [:dashboard, :index]
 
   def dashboard
-
+    Rails.logger.info "++++ hello? ++++"
+    @contacts = Contact.find(:all, :conditions => {:status => Contact::Status::NEW}, :order => created_at)
   end
 
   def index
@@ -31,7 +32,7 @@ class WebpagesController < ApplicationController
     @webpage = params[:page_alias] ? Webpage.find(:first, :conditions => {:page_alias => params[:page_alias]}) : Webpage.current_root
     @subpages = @webpage.subpages.paginate(:page => params[:page], :per_page => 4)
     @widgets = @webpage.widgets.for_page(true, 3)
-    @contact = Contact.new
+    @contact = Contact.new if ['contact', 'treasures'].include?(@webpage.page_alias)
   end
 
   def edit

@@ -145,7 +145,7 @@ var Gallery = Class.create({
       if(this.window.down('img')) new Effect.Fade(this.window.down('img'), {duration: 0.25});
 
       new Effect.Parallel([
-        new Effect.Morph(this.window, {style: {height: pos.height + "px", width: pos.width + "px"}}),
+        new Effect.Morph(this.window, {style: {height: (pos.height + 20) + "px", width: pos.width + "px"}}),
         new Effect.Move(this.window, {x: pos.left, y: pos.top, mode: 'absolute'})
       ], {duration: 0.5, afterFinish: function(effect) {
           // update the popup window with the content from temp and remove temp from the DOM

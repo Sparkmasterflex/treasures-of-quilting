@@ -1,7 +1,10 @@
 %li
   = link_to webpage.page_alias.capitalize, edit_webpage_path(webpage)
-  = link_to "Details", '#expand', {:class => "expand icon hidden"}
+  = link_to "Details", '#expand', {:class => "expand icon hidden", :title => "Expand #{webpage.page_alias} Details"}
   %ul.subpages
+    %li.template.icon= "Template: #{AppSystem::Templates::LABELS[webpage.template]}"
+    %li.image.icon= "Number of Images: #{webpage.images.size}"
+    %li.widget.icon= "Number of Widgets: #{webpage.widgets.size}"
     %li
       %p= webpage.preview_text
     %li= link_to "New Subpage", new_webpage_subpage_path(webpage), {:class => "#{webpage.link_class} new icon", 'data-page' => webpage.id }

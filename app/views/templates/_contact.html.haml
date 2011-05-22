@@ -1,1 +1,7 @@
-hello
+#mainContent.minHeight.shadow
+  .leftcol
+    %h1= object.page_title
+    %p= add_html_tags(object.preview_text)
+    %p= add_html_tags(object.text)
+  .rightcol
+    = render :partial => '/contacts/form', :locals => {:contact => @contact}

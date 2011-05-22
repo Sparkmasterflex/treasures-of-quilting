@@ -39,7 +39,6 @@ class Webpage < ActiveRecord::Base
 
   before_validation :create_page_alias
   before_save :unset_current_root
-  after_save :create_contact_widget
 
   validates :page_title, :preview_text, :presence => true
 

@@ -1,5 +1,5 @@
-%h4 Quick Questions
-- unless @contact.nil?
+#contact
+  %h4 Quick Questions
   - form_for @contact, :url => contacts_path, :html => {:method => :post, :id => 'contact-form'} do |f|
     .formfield
       = f.label :name, 'Name:'
@@ -12,5 +12,3 @@
       = f.text_area :message, {:size => '16x3'}
     .button
       = f.submit 'Send'
-- else
-  = render :partial => '/widgets/content_fields/contact_form'

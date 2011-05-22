@@ -3,7 +3,7 @@ Toq::Application.routes.draw do
   match '/login' => 'user_sessions#new', :as => :login, :via => :get
   match '/login' => 'user_sessions#create', :as => :login, :via => :post
   match '/logout' => 'user_sessions#destroy', :as => :logout
-  match '/editor/' => 'webpages#dashboard', :as => :dashboard
+  match '/editor' => 'webpages#dashboard', :as => :dashboard
 
   resources :users, :path => '/editor/users'
   resources :contacts, :path => '/editor/contacts'
@@ -11,6 +11,7 @@ Toq::Application.routes.draw do
   resources :webpages, :path => '/editor/webpages' do    
     collection do
       post :send_email
+      #get :dashboard
     end
     member do
       put :set_accessability

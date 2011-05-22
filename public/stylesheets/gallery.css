@@ -49,10 +49,10 @@ a#gallery-close {
   text-indent: -9999px; }
 
 #gallery-window #next-prev {
+  background: #222;
   position: absolute;
   width: 92%;
   bottom: 20px;
-  top: auto;
   padding: 0.5em 1em; }
 
 #gallery-window #next-prev a {
@@ -61,12 +61,19 @@ a#gallery-close {
 
 #gallery-window #next-prev #next-img,
 #gallery-window #next-prev #previous-img {
+  display: block;
   width: 25%;
-  display: block; }
+  height: 0.75em;
+  margin-top: 0.45em;
+  text-indent: -9999px;
+  overflow: hidden; }
+  #gallery-window #next-prev #next-img:hover,
+  #gallery-window #next-prev #previous-img:hover {
+    background-position: bottom left; }
 
 #gallery-window #next-prev #next-img {
   float: right;
-  text-align: right; }
+  background: url(images/image_arrow_next.png) no-repeat top left; }
 
 #gallery-window #next-prev p {
   float: left;
@@ -76,4 +83,5 @@ a#gallery-close {
   margin-bottom: 0; }
 
 #gallery-window #next-prev #previous-img {
-  float: left; }
+  float: left;
+  background: url(images/image_arrow_prev.png) no-repeat top left; }

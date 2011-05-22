@@ -13,8 +13,19 @@ document.observe('dom:loaded', function(){
   }
   
   setupSubpagePreview();
-  if($('gallery')) {
-    $('gallery').select('li a').each(function(el) {new Gallery({el: el, images: $('gallery').select('li a')});});
+  if($('gallery')) $('gallery').select('li a').each(function(el) {new Gallery({el: el, images: $('gallery').select('li a')});});
+  
+  if($('contact-form')) {
+  	$('contact-form').observe('submit', function(e) {
+	  	e.stop();
+	  	var form = Event.element(e),
+	  			serial = form.serialize();
+	  	
+	  	new Ajax.Updater($('contact'), '/editor/contacts', {
+	  		method: 'post',
+	  		parameters: serial
+	  	});
+  	});
   }
 });
 

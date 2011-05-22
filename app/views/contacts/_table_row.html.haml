@@ -1,0 +1,4 @@
+%tr
+  %td= link_to contact.name, '#', :class => 'contact icon'
+  %td= contact.email
+  %td= Contact::Status::LABELS[contact.status]

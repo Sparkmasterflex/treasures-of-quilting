@@ -8,7 +8,18 @@ document.observe('dom:loaded', function(){
     $('widgets').hide();
     $$('a.widget').invoke('hide');
   }
-  if($('top-level')) $$('ul.subpages').invoke('hide');
+	$$('ul.subpages').invoke('hide');
+	$$('a.expand').invoke('observe', 'click', function(e){
+  	e.stop();
+  	var el = Event.element(e),
+  			parent = el.up('li'),
+  			toggle = parent.down('ul.subpages');
+  	
+  	new Effect.toggle(toggle, 'blind', {duration: .25});
+  	el.hasClassName('collapse') ?
+  		el.removeClassName('collapse') :
+  			el.addClassName('collapse'); 
+  });
 });
 
 function observeImageElements() {

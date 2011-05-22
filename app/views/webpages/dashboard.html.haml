@@ -25,6 +25,17 @@
   %tr.odd
     %td Last Updated
     %td= current_user.last_updated
+%table#contacts
+  %thead
+    %tr
+      %td Contact Name
+      %td Email
+      %td Status
+  - unless @contacts.blank?
+    = render :partial => 'contacts/table_row', :collection => @contacts, :as => :contact
+  - else
+    %tr
+      %td{:colspan => 3} No New Contacts
 /#preview
 /  %h4 Preview Website Attributes
 /  %ul

@@ -1,0 +1,18 @@
+#contact
+  %h1 Send Me A Message
+  - form_for contact, :url => contacts_path, :html => {:method => :post, :id => 'contact-form'} do |f|
+    = render_error_msg(contact)
+    .formfield
+      = f.label :name
+      = f.text_field :name
+    .formfield
+      = f.label :email
+      = f.text_field :email
+    .formfield
+      = f.label :phone
+      = f.text_field :phone
+    .formfield
+      = f.label :message
+      = f.text_area :message, :size => '20x8'
+    .button
+      = f.submit "Send Message"

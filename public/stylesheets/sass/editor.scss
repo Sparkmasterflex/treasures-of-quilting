@@ -1,4 +1,5 @@
-@import "http://meyerweb.com/eric/tools/css/reset/reset.css";
+/*@import "http://meyerweb.com/eric/tools/css/reset/reset.css";*/
+@import '/stylesheets/reset.css';
 @import 'mixins';
 
 header, section, footer, aside, nav, article, figure, menu, time { display: block; }
@@ -95,14 +96,17 @@ a { cursor: pointer; }
 .edit { background: url(images/silk/pencil.png) no-repeat left center; }
 .new { background: url(images/silk/page_add.png) no-repeat left center; }
 .add { background: url(images/silk/image_add.png) no-repeat left center; }
+.image { background: url(images/silk/image.png) no-repeat left center; }
 .remove { background: url(images/silk/image_delete.png) no-repeat left center; }
+.widget { background: url(images/silk/plugin.png) no-repeat left center; }
 .widget.add { background: url(images/silk/plugin_add.png) no-repeat left center; }
 .widget.remove { background: url(images/silk/plugin_disabled.png) no-repeat left center; }
+.template { background: url(images/silk/layout_content.png) no-repeat left center; }
 .delete { background: url(images/silk/cross.png) no-repeat left center; }
 .help { background: url(images/silk/help.png) no-repeat left center; }
 .access { background: url(images/silk/eye.png) no-repeat left center; }
 .expand { background: url(images/silk/expand.gif) no-repeat left center;}
-.collapse { background: url(images/silk/collapse.png) no-repeat left center;}
+  .expand.collapse { background: url(images/silk/collapse.png) no-repeat left center;}
 
 section#header {
   height: 8.5em;
@@ -233,22 +237,23 @@ body#editor {
           td { font-size: 1.6em; padding: 0.63em 1em;}
         }
       }
-      .leftcol { width: 47.5em; float: left;
-        ul#top-level {
+      ul#top-level {
           li {
+            position: relative;
             padding: 1em;
             margin: 1em 0;
             @include green-gradient;
             border: 1px solid #000;
+            width: 75%;
             a {
               display: block;
               color: #fff;
               margin-bottom: 0.25em;
               text-shadow: 1px 1px 1px #333;
-              float: left;
-              &.icon {
-                float: right;
-                
+              &.expand {
+                position: absolute;
+                top: 0.31em;
+                right: 0.31em;                
               }
             }
             p { font-size: 0.85em; color: #fff; line-height: 1.25em; }
@@ -257,14 +262,20 @@ body#editor {
               li {
                 background: none;
                 padding: 0;
-                margin: 0;
+                margin: 0.31em 0;
                 border: none;
-                p { font-size: 0.6em; }
-                a { font-size: 0.6em; margin: 0; }
+                font-size: 1em;
+                color: #fff;
+                &.icon {display: block; padding: 3px 0 3px 20px; }
+                &.template { background: url(images/silk/layout_content.png) no-repeat left center; }
+                &.image { background: url(images/silk/image.png) no-repeat left center; }
+                &.widget { background: url(images/silk/plugin.png) no-repeat left center; }
+                a { font-size: 1em; margin: 0; }
               }
             }
           }
         }
+      .leftcol { width: 47.5em; float: left;
         .formfield {
           a.help { float: right; width: 20px; padding: 0; margin: 0 10em 0 0; }
           margin-bottom: 1.5em;
