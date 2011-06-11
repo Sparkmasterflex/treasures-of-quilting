@@ -2,6 +2,6 @@
   - @mainpages.each do |main|
     -if main.enabled
       %h3= link_to main.page_title, webpage_show_path(:page_alias => main.page_alias)
-      - unless main.subpages.blank?
+      - unless main.subpages.blank? || main.calculator?
         %menu
           = render :partial => '/subpages/subpage_li', :collection => main.subpages.enabled

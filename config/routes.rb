@@ -11,7 +11,7 @@ Toq::Application.routes.draw do
   resources :webpages, :path => '/editor/webpages' do    
     collection do
       post :send_email
-      #get :dashboard
+      post :calculate
     end
     member do
       put :set_accessability

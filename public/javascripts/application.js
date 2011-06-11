@@ -1,6 +1,13 @@
 document.observe('dom:loaded', function(){
   // observe pagination links
   $$('.ajax.pagination a').invoke('observe', 'click', ajaxPagination);
+  $$('a[rel=scrollTo]').invoke('observe', 'click', function(e){
+  	e.stop();
+  	var el = Event.element(e),
+  			to = el.readAttribute('href').gsub(/#/, '');
+
+  	new Effect.ScrollTo(to, { duration:'0.5', offset:-20 });
+  })
 
   if($('slideshow')) {
     new SlideShow({
@@ -27,6 +34,27 @@ document.observe('dom:loaded', function(){
 	  	});
   	});
   }
+  
+  $$('.read-more').invoke('hide');
+  $$('a.expand').invoke('observe', 'click', function(e){
+  	e.stop();
+  	var el = Event.element(e),
+  			parent = el.up(),
+  			toggle = parent.down('.' + el.readAttribute('rel'));
+  	new Effect.toggle(toggle, 'blind', {duration: 0.5});
+  	if(el.hasClassName('alternate')) alternateText(el);
+   });
+  
+  $('calculator-form').down('form').observe('submit', function(e){
+  	e.stop();
+  	var form = Event.element(e),
+  			href = form.readAttribute('action');
+  	
+  	new Ajax.Updater(form.up(), href, {
+  		method: 'post',
+  		parameters: form.serialize()
+  	})
+  });
 });
 
 function ajaxPagination(e) {
@@ -71,4 +99,10 @@ function displayDropDown(e) {
   el.setStyle(style);
   dropDown.setStyle('width', ddWidth);
   dropDown.toggle();
+}
+
+function alternateText(link) {
+	link.innerHTML == 'Read More' ?
+		link.update('Hide') :
+			link.update('Read More');
 }

@@ -54,6 +54,17 @@ class WebpagesController < ApplicationController
     end
     render :action => :edit, :layout => 'editor'
   end
+  
+  def calculate
+    respond_to do |format|
+      format.html {}
+      format.js do
+        @calculated = Calculator.estimate(params)
+        flash = "Congratulations! Estimate calculated!"
+        render :partial => '/templates/estimate', :locals => {:calculated => @calculated, :selected => params, :flash => flash}
+      end
+    end
+  end
 
   def set_accessability
     webpage = Webpage.find(params[:web].to_i)

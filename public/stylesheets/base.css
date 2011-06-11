@@ -506,6 +506,94 @@ form .button {
   width: 95%;
   margin-left: 0; }
 
+/*--------------------------------Calculator-*/
+#calculator-form {
+  width: 40em;
+  margin: 2em auto;
+  padding: 2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border: 1px solid #ccc; }
+  #calculator-form form #dimensions {
+    height: 7em; }
+    #calculator-form form #dimensions h4 {
+      text-align: center;
+      font-weight: normal;
+      font-size: 1.6em;
+      margin-bottom: 0.5em; }
+    #calculator-form form #dimensions .formfield {
+      margin: 0 3em;
+      float: left;
+      width: 14em;
+      padding: 0.2em 0; }
+      #calculator-form form #dimensions .formfield label {
+        display: block;
+        width: 3em;
+        float: left;
+        margin-top: 0.4em; }
+      #calculator-form form #dimensions .formfield input[type=text] {
+        width: 4em;
+        float: right; }
+  #calculator-form form .formfield {
+    margin-bottom: 1em; }
+    #calculator-form form .formfield label {
+      width: 100%;
+      display: block;
+      margin-bottom: 0.35em; }
+    #calculator-form form .formfield input[type=checkbox] + label {
+      float: left;
+      width: auto;
+      margin-left: 0.5em; }
+    #calculator-form form .formfield.small label,
+    #calculator-form form .formfield input[type=checkbox] {
+      float: left;
+      width: auto; }
+    #calculator-form form .formfield.small select {
+      float: left;
+      margin-left: 2em; }
+    #calculator-form form .formfield.button {
+      width: 17em; }
+  #calculator-form h4 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em; }
+  #calculator-form h5 {
+    font-size: 3.2em;
+    text-align: center;
+    color: #4D041B; }
+  #calculator-form p {
+    padding: 0; }
+  #calculator-form ul {
+    margin-left: 2em; }
+    #calculator-form ul li {
+      margin: 0.63em 0; }
+
+#calculator-desc {
+  margin: 1em;
+  width: 68.8em;
+  padding: 2em 2em 0.5em;
+  float: right;
+  background: #fff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 1px #444444;
+  -moz-box-shadow: 1px 1px 1px #444444; }
+  #calculator-desc h1 {
+    font-weight: normal;
+    font-family: "Times New Roman", serif;
+    font-size: 3em;
+    text-shadow: 1px 1px 1px #ccc;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.33em; }
+  #calculator-desc li a {
+    font-size: 1em; }
+  #calculator-desc .desc {
+    margin: 2em 0; }
+    #calculator-desc .desc h3 {
+      font-size: 1.8em; }
+    #calculator-desc .desc p {
+      padding: 0 1.26em; }
+
 /*--------------------------------Footer-*/
 footer {
   padding: 1em;

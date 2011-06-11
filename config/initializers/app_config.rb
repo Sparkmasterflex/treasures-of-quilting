@@ -8,9 +8,10 @@ module AppSystem
     SALES          = 30
     STORE          = 35
     CONTACT        = 40
+    CALCULATOR     = 50
+    CALC_DESC      = 60
 
-    LABELS = {HOME => 'Home', INFORMATIONAL => 'Informational', SALES => 'Sales', STORE => 'Store', CONTACT => 'Contact'}
-    PATHS = {HOME => 'templates/home', INFORMATIONAL => '/templates/informational', SALES => '/templates/sales', STORE => '/templates/store', CONTACT => '/templates/contact'}
+    LABELS = {HOME => 'Home', INFORMATIONAL => 'Informational', SALES => 'Sales', STORE => 'Store', CONTACT => 'Contact', CALCULATOR => 'Calculator', CALC_DESC => 'Calculator_Desc'}
 
     def self.options_for_select
       LABELS.sort.unshift([nil, "Please Select"]).collect { |arr| arr.reverse }

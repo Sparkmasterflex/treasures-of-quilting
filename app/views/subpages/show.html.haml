@@ -1,1 +1,1 @@
-= render :partial => AppSystem::Templates::PATHS[@subpage.template], :locals => {:object => @subpage}
+= render :partial => "/templates/#{AppSystem::Templates::LABELS[@subpage.template].downcase}", :locals => {:object => @subpage}

@@ -330,8 +330,7 @@ a#subpages-link{
       background: -moz-linear-gradient(top, #7A1333 44%, #4D041B 98%);
       background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#7A1333), color-stop(98%,#4D041B));
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A1333', endColorstr='#4D041B',GradientType=0 );
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
+      @include rounded(5px);
       border: 2px solid #3A0306;
       padding: 3.7em 1em 2em;
       position: absolute;
@@ -355,8 +354,7 @@ a#subpages-link{
       padding: 0.63em;
       margin: 0 0.63em 0 0;
       float: left;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
+      @include rounded(5px);
       border: 1px solid #ccc;
       text-align: center;
       &:hover {
@@ -393,6 +391,83 @@ form {
   .formfield {
     label { display: block; width: 100%; margin: 0.5em 0; }
     input[type=text] { width: 95%; margin-left: 0; }
+  }
+}
+
+/*--------------------------------Calculator-*/
+#calculator-form {
+  width: 40em;
+  margin: 2em auto;
+  padding: 2em;
+  @include rounded(5px);
+  border: 1px solid #ccc;
+  form {
+    #dimensions {
+      height: 7em;
+      h4 {
+        text-align: center;
+        font: { weight: normal; size: 1.6em; }
+        margin-bottom: 0.5em;
+      }
+      .formfield {
+        margin: 0 3em;
+        float: left;
+        width: 14em;
+        padding: 0.2em 0;
+        label {
+          display: block;
+          width: 3em;
+          float: left;
+          margin-top: 0.4em;
+        }
+        input[type=text] { width: 4em; float: right; }
+      }
+    }
+    .formfield {
+      margin-bottom: 1em;
+      label { width: 100%; display: block; margin-bottom: 0.35em; }
+      input[type=checkbox] + label { float: left; width: auto; margin-left: 0.5em; }
+      &.small label,
+      input[type=checkbox] { float: left; width: auto; }
+      &.small select { float: left; margin-left: 2em; }
+      &.button { width: 17em; }
+    }
+  }
+  h4 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  h5 {
+    font-size: 3.2em;
+    text-align: center;
+    color: #4D041B;
+  }
+  p { padding: 0; }
+  ul { margin-left: 2em;
+    li { margin: 0.63em 0; }
+  }
+}
+
+#calculator-desc {
+  margin: 1em;
+  width: 68.8em;
+  padding: 2em 2em 0.5em;
+  float: right;
+  background: #fff;
+  @include rounded(20px);
+  @include shadow;
+  h1 {
+    font: { weight: normal; family: "Times New Roman", serif; size: 3em; }
+    text-shadow: 1px 1px 1px #ccc;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.33em;
+  }
+  li a { font-size: 1em; }
+  .desc {
+    margin: 2em 0;
+    h3 { font-size: 1.8em; }
+    p { padding: 0 1.26em; }
   }
 }
 

@@ -1,4 +1,6 @@
 class Webpage < ActiveRecord::Base
+  require 'calculator'
+  
   has_many :subpages do
     def enabled
       find(:all, :conditions => {:enabled => true })
@@ -92,6 +94,10 @@ class Webpage < ActiveRecord::Base
   
   def current(page)
     'current' if self.page_alias == page
+  end
+  
+  def calculator?
+    self.page_alias == 'calculator'
   end
 
   private
