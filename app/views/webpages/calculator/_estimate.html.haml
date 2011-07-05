@@ -1,0 +1,37 @@
+%h4 Your Estimate
+%h5= number_to_currency(values[:total])
+%p.flash_msg.success= flash
+%table
+  %thead
+    %tr
+      %td{:colspan => 2} Estimate Break-down
+  %tr
+    %td Calculated Square inches
+    %td= values[:sq_inches]
+  %tr
+    %td Extra Borders
+    %td= number_to_currency(values[:borders])
+  %tr
+    %td Quilting Type
+    %td= number_to_currency(values[:quilting])
+  %tr
+    %td Require Batting
+    %td= number_to_currency(values[:batting])
+  %tr
+    %td Binding Type
+    %td= number_to_currency(values[:binding])
+  %tr
+    %td Thread Colors
+    %td= number_to_currency(values[:thread])
+  %tr
+    %td Require Backing
+    %td= number_to_currency(values[:backing])
+  %tr
+    %td Sales Tax
+    %td= number_to_currency(values[:tax])
+= link_to "Reset", webpage_show_path(:page_alias => 'calculator'), :class => 'floatRight'
+= form_tag send_estimate_webpages_path, :method => :post do
+  = hidden_field_tag :calculated, :value => values.inspect
+  .button
+    = submit_tag "Get Started!"
+

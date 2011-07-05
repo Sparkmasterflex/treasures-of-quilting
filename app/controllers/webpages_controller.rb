@@ -33,6 +33,7 @@ class WebpagesController < ApplicationController
     @subpages = @webpage.subpages.paginate(:page => params[:page], :per_page => 4)
     @widgets = @webpage.widgets.for_page(true, 3)
     @contact = Contact.new if ['contact', 'treasures'].include?(@webpage.page_alias)
+    @submitted = params[:submitted] || nil
   end
 
   def edit
@@ -59,11 +60,20 @@ class WebpagesController < ApplicationController
     respond_to do |format|
       format.html {}
       format.js do
-        @calculated = Calculator.estimate(params)
-        flash = "Congratulations! Estimate calculated!"
-        render :partial => '/templates/estimate', :locals => {:calculated => @calculated, :selected => params, :flash => flash}
+        if @values = Calculator.estimate(params)
+          flash = "Congratulations! Estimate calculated!"
+          render :partial => '/webpages/calculator/estimate', :locals => {:values => @values, :flash => flash}
+        else
+          flash = "Please provide all the necessary information."
+          render :partial => '/webpages/calculator/form', :locals => {:params => params, :flash => flash}
+        end
       end
     end
+  end
+  
+  def send_estimate
+    parameters = {:submitted => params[:calculated], :page_alias => 'contact'}
+    redirect_to parameters.merge!(:action => :show)
   end
 
   def set_accessability

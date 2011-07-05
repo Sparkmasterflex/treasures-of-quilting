@@ -1,0 +1,18 @@
+.dark-grad { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#333333',GradientType=0 ); }
+
+section#header header #logo,
+.button { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d041b', endColorstr='#7a1333',GradientType=0 ); }
+	
+	section#header header #logo h1,
+	.button a, input[type=submit] { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BC4F4F', endColorstr='#4d041b',GradientType=0 ); }
+		.button a:hover,
+	  input[type=submit]:hover { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a81a46', endColorstr='#a81a46',GradientType=0 ); }
+	  
+section#header nav ul { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d041b', endColorstr='#7a1333',GradientType=0 ); }
+	section#header nav ul li a { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BC4F4F', endColorstr='#4d041b',GradientType=0 ); }
+		section#header nav ul li a:hover,
+		section#header nav ul li a.current { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a81a46', endColorstr='#a81a46',GradientType=0 ); }
+		
+#featured { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d041b', endColorstr='#7a1333',GradientType=0 ); }
+
+#subpage-preview .drop-down { filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A1333', endColorstr='#4D041B',GradientType=0 ); }

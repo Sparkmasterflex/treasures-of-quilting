@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
   def create
+    Rails.logger.info "++++ params ++++"
+    Rails.logger.info params.inspect
+    Rails.logger.info "++++ params[:contact] ++++"
+    Rails.logger.info params[:contact].inspect
     @contact = Contact.new(params[:contact])
     
     if @contact.save

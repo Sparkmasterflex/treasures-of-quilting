@@ -15,7 +15,7 @@ menu { list-style: none; }
 .floatLeft { float: left; }
 .floatRight { float: right; }
 
-.dark-grad {
+.dark-grad { /*-- done --*/
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3B3B3B), to(#222222), color-stop(.3,#4F4F4F),color-stop(.8,#333333));
   background: -moz-linear-gradient(0% 78% 90deg,#222222, #3B3B3B, #4F4F4F 56%,#333333 93%);
 }
@@ -25,24 +25,27 @@ menu { list-style: none; }
 .left-bottom-rounded { @include rounded-custom(0, 0, 0, 10px); }
 .bottom-rounded { @include rounded-custom(0, 0, 10px, 10px); }
 
-.button {
+.button {/*-- done --*/
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4D041B), to(#7A1333));
   background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
+  background: -o-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
   margin: 2em auto;
   width: 17em;
   padding: 0.35em;
   @include rounded(10px);
-  a, input[type=submit] {
+  a, input[type=submit] { /*-- done --*/
     text: { align: center; shadow: -1px -1px 1px #555; decoration: none; }
     color: #fff;
     display: block;    
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E3AFAF), to(#4D041B), color-stop(.5,#821436),color-stop(.5,#6C112D));
     background: -moz-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
+    background: -o-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
     @include rounded(5px);
-    &:hover {
+    &:hover { /*-- done --*/
       text-shadow: none;
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A81A46), to(#A81A46), color-stop(.4,#4D041B),color-stop(.6,#4D041B));
       background: -moz-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
+      background: -o-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
     }
   }
   input[type=submit] { border: none; }
@@ -105,13 +108,14 @@ section#header{
     height: 7em;
     overflow: visible;
     a { color: #fff; }
-    #logo {
+    #logo { /*-- done --*/
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4D041B), to(#7A1333));
       background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
+      background: -o-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
       @include rounded(15px);
       padding: 0.5em;
       position: relative;
-      h1 {
+      h1 { /*-- done --*/
         background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E3AFAF), to(#4D041B), color-stop(.5,#821436),color-stop(.5,#6C112D));
         background: -moz-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
         @include rounded(15px);
@@ -124,19 +128,21 @@ section#header{
       }
       h2 { height: 0; }
     } /*---- /#logo ----*/
-    nav ul {
+    nav ul { /*-- done --*/
       float: right;
       padding: 0.5em;
       background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4D041B), to(#7A1333));
       background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
+      background: -o-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
       @include rounded(15px);
       li { float: left;
-        a.current, a:hover {
+        a.current, a:hover { /*-- done --*/
           text-shadow: none;
           background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A81A46), to(#A81A46), color-stop(.4,#4D041B),color-stop(.6,#4D041B));
           background: -moz-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
+          background: -o-linear-gradient(0% 96% 90deg,#A81A46, #4D041B, #A81A46 100%);
         }
-        a {
+        a { /*-- done --*/
           text: { shadow: -1px -1px 1px #555; decoration: none; align: center;}
           font-size: 1.5em;
           display: block;
@@ -144,6 +150,7 @@ section#header{
           padding: 0.9em 0;
           background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#E3AFAF), to(#4D041B), color-stop(.5,#821436),color-stop(.5,#6C112D));
           background: -moz-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
+          background: -o-linear-gradient(0% 53% 90deg,#4D041B, #821436, #6C112D 0%,#E3AFAF 93%);
         }
       }
     } /*----- /nav ul -----*/
@@ -269,6 +276,7 @@ ul#gallery {
   padding: 1em;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4D041B), to(#7A1333));
   background: -moz-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
+  background: -o-linear-gradient(96% 75% 90deg,#7A1333, #4d041b);
   @include rounded(20px);
   h4 {
     font: { size: 2.4em; weight: normal; }
@@ -327,9 +335,9 @@ a#subpages-link{
   #sub-nav { width: 100%;
     a#subpages-link { position: relative; z-index: 150; }
     .drop-down {
+      background: -o-linear-gradient(top, #7A1333 44%, #4D041B 98%);
       background: -moz-linear-gradient(top, #7A1333 44%, #4D041B 98%);
       background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#7A1333), color-stop(98%,#4D041B));
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7A1333', endColorstr='#4D041B',GradientType=0 );
       @include rounded(5px);
       border: 2px solid #3A0306;
       padding: 3.7em 1em 2em;
@@ -391,6 +399,21 @@ form {
   .formfield {
     label { display: block; width: 100%; margin: 0.5em 0; }
     input[type=text] { width: 95%; margin-left: 0; }
+    &.estimate {
+      margin: 1em 0;
+      padding: 1em 0;
+      background: #eee;
+      @include rounded(5px);
+      border: 1px solid #ccc;
+      ul {
+        margin-left: 3em;
+        li {
+          color: #222;
+          text-shadow: 1px 1px 1px #ccc;
+          margin: 0.31em 0;
+        }
+      }
+    }
   }
 }
 
@@ -401,6 +424,7 @@ form {
   padding: 2em;
   @include rounded(5px);
   border: 1px solid #ccc;
+  p.flash_msg { width: auto; }
   form {
     #dimensions {
       height: 7em;
@@ -440,12 +464,25 @@ form {
   }
   h5 {
     font-size: 3.2em;
+    margin-bottom: 0.5em;
     text-align: center;
     color: #4D041B;
   }
-  p { padding: 0; }
-  ul { margin-left: 2em;
-    li { margin: 0.63em 0; }
+  .button { margin-top: 3em; }
+  table {
+    border: 1px solid #ccc;
+    @include rounded(2px);
+    width: 100%;
+    thead { background: #4d041b; color: #fff; 
+      td { font-size: 1.8em; text-align: center; }
+    }
+    tr {
+      &:nth-child(even) { background: #E3AFAF; }
+      td {
+        font-size: 1.6em;
+        padding: 0.26em 0.62em;
+      }
+    }
   }
 }
 

@@ -6,37 +6,7 @@
       %p= add_html_tags(object.text)
     = link_to 'Read More', "#more", {:class => 'expand alternate', :rel => 'read-more'}
   #calculator-form
-    %h4 Price Your Quilt
-    = form_tag calculate_webpages_path, :method => :post do
-      #dimensions
-        %h4 Dimensions
-        .formfield
-          = label_tag :width
-          = text_field_tag :width, {}, {:maxlength => 4, :placeholder => 'inches' }
-        .formfield
-          = label_tag :height
-          = text_field_tag :height, {}, {:maxlength => 4, :placeholder => 'inches' }
-      .formfield.small.clearfix
-        = label_tag :borders, "Extra Borders"
-        = select_tag :borders, options_for_select({1 => 1, 2 => 2, 3 => 3, 4 => 4})
-      .formfield
-        = label_tag :quilting, "Type of Quilting" 
-        = select_tag :quilting, options_for_select(Calculator::Quilting.options_for_select)
-      .formfield.clearfix
-        = check_box_tag :batting
-        = label_tag :batting, "I can supply my own batting"
-      .formfield
-        = label_tag :binding
-        = select_tag :binding, options_for_select(Calculator::Binding.options_for_select)
-      .formfield.small.clearfix
-        = label_tag :thread, "Thread Colors"
-        = select_tag :thread, options_for_select({1 => 0, 2 => 1, 3 => 2, 4 => 3, 5 => 4, 6 => 5, 7 => 6})
-      .formfield.clearfix
-        = check_box_tag :backing
-        = label_tag :backing, "I can supply my own backing"
-      %p Ask about different kinds of batting I can provide or supply your own.
-      .formfield.button
-        = submit_tag "Calculate"
+    = render :partial => '/webpages/calculator/form'
   %p Please note that all calculations are just estimates. Please contact me to learn more. Also any extras will be charged accordingly.
 - unless object.subpages.blank?
   #calculator-desc

@@ -2,10 +2,14 @@
 !!! 5
 %html
   %head
-  %title Treasures of Quilting - Custom, Picture, Memory and T-Shirt Quilts and Quality Quilted Products
-  %meta{"http-equiv"=>"Content-Type", :content =>"text/html; charset=utf-8"}
-  = stylesheet_link_tag 'base', 'gallery'
-  = javascript_include_tag 'prototype', 'effects','application', 'slideshow', 'gallery'
+    %title Treasures of Quilting - Custom, Picture, Memory and T-Shirt Quilts and Quality Quilted Products
+    %meta{"http-equiv"=>"Content-Type", :content =>"text/html; charset=utf-8"}
+    = stylesheet_link_tag 'base', 'gallery'
+    = javascript_include_tag 'prototype', 'effects','application', 'slideshow', 'gallery'
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    /[if IE]
+      = stylesheet_link_tag 'ie'
   %body
   %section#header
     %header

@@ -6,6 +6,10 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = stylesheet_link_tag 'editor'
     = javascript_include_tag 'prototype', 'effects','editor', 'dynamic-fields'
+    /[if lt IE 9]
+      = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
+    /[if IE]
+      = stylesheet_link_tag 'ie'
     - javascript_tag do
       = yield :jstemplates
   %body#editor

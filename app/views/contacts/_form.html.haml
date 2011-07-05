@@ -11,6 +11,14 @@
     .formfield
       = f.label :phone
       = f.text_field :phone
+    - unless @submitted.blank?
+      .formfield.estimate
+        = f.hidden_field :estimate, :value => @submitted
+        %p My Quilt Estimate *
+        %ul
+          - contact.to_hash(@submitted).each do |attr|
+            %li= attr
+      %sub * This estimate will be included with your message to Treasures of Quilting
     .formfield
       = f.label :message
       = f.text_area :message, :size => '20x8'

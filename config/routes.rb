@@ -12,6 +12,7 @@ Toq::Application.routes.draw do
     collection do
       post :send_email
       post :calculate
+      post :send_estimate
     end
     member do
       put :set_accessability
