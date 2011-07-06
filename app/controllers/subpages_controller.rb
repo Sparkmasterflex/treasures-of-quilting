@@ -19,7 +19,8 @@ class SubpagesController < ApplicationController
     if @subpage.save
       redirect_to webpages_path
     else
-      render :action => 'new'
+      editor_navigation
+      render :layout => 'editor', :action => 'new'
     end
   end
 
@@ -40,6 +41,7 @@ class SubpagesController < ApplicationController
     if @subpage.update_attributes(params[:subpage])
       flash[:success] = "#{@subpage.page_title} Has been successfully saved!"
     else
+      editor_navigation
       flash[:error] = "We found the following errors."
     end
     render :action => :edit, :layout => 'editor'

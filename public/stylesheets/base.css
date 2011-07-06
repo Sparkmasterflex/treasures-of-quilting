@@ -363,7 +363,7 @@ ul#slideshow {
   text-shadow: 1px 1px 1px #444; }
 
 /*---- js_gallery ----*/
-ul#gallery li {
+ul.gallery li {
   float: left;
   width: 5em;
   height: 5em;
@@ -638,6 +638,8 @@ form .button {
       font-size: 1.8em; }
     #calculator-desc .desc p {
       padding: 0 1.26em; }
+    #calculator-desc .desc .gallery {
+      width: 100%; }
 
 /*--------------------------------Footer-*/
 footer {

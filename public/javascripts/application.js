@@ -1,5 +1,5 @@
 document.observe('dom:loaded', function() {
-	  // observe pagination links
+	// observe pagination links
   $$('.ajax.pagination a').invoke('observe', 'click', ajaxPagination);
   $$('a[rel=scrollTo]').invoke('observe', 'click', function(e){
   	e.stop();
@@ -20,7 +20,10 @@ document.observe('dom:loaded', function() {
   }
   
   setupSubpagePreview();
-  if($('gallery')) $('gallery').select('li a').each(function(el) {new Gallery({el: el, images: $('gallery').select('li a')});});
+  // if($('gallery')) $('gallery').select('li a').each(function(el) {new Gallery({el: el, images: $('gallery').select('li a')});});
+  $$('ul.gallery').each(function(ul){
+  	ul.select('li a').each(function(el) {new Gallery({el: el, images: ul.select('li a')});});
+  });
   
   if($('contact-form')) {
   	$('contact-form').observe('submit', function(e) {

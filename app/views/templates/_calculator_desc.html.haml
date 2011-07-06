@@ -1,7 +1,8 @@
 .desc{:id => calculator_desc.page_alias}
   %h3= calculator_desc.page_title
   %p= add_html_tags(calculator_desc.preview_text)
-  .read-more
-    %p= add_html_tags(calculator_desc.text)
-  = link_to 'Read More', "#more", {:class => 'expand alternate', :rel => 'read-more'}
   = render :partial => '/widgets/js_gallery', :locals => {:object => calculator_desc, :column => 'row'}
+  - unless calculator_desc.text.blank?
+    .read-more
+      %p= add_html_tags(calculator_desc.text)
+    = link_to 'Read More', "#more", {:class => 'expand alternate', :rel => 'read-more'}

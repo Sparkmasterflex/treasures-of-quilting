@@ -3,6 +3,6 @@ New Contact from treasuresofquilting.com
 <%= @sender.name %>
 <%= @sender.email %>
 <%= @sender.phone %>
-<%= @sender.message %>
+<%= raw(@sender.message) %>
 <%= @sender.created_at.strftime('%m/%d/%Y') %>
 

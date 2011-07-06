@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
     CLIENT      = 30
     CLOSED      = 40
     
-    LABELS = {NEW => 'New Contact', CONTACTED => 'Contacted', POTENTIAL => 'Potential Client', CLIENT => 'Current Client', CLOSED => 'Client Closed'}
+    LABELS = { NEW => 'New Contact', CONTACTED => 'Contacted', POTENTIAL => 'Potential Client', CLIENT => 'Current Client', CLOSED => 'Client Closed' }
   end
   
   attr_accessor :estimate
@@ -46,7 +46,7 @@ class Contact < ActiveRecord::Base
   def append_estimate
     unless @estimate.blank?
       self.message.blank? ? self.message = to_hash(@estimate) :
-                              self.message += to_hash(@estimate) * '\n'
+                              self.message += '<br /><br />Begin estimate:<br />---------------------------<br />' + to_hash(@estimate) * '<br />'
     end
   end
 end

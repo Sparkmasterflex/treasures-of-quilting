@@ -42,7 +42,7 @@ class Webpage < ActiveRecord::Base
   before_validation :create_page_alias
   before_save :unset_current_root
 
-  validates :page_title, :preview_text, :presence => true
+  validates :page_title, :preview_text, :template, :presence => true
 
   def self.last_page_updated(user)
     self.find(:first, :conditions => {:updated_by => user.id}, :order => :updated_at) || "No pages updated by #{user.login}"

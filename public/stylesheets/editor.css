@@ -95,6 +95,12 @@ ul.collapse li {
 .new {
   background: url(images/silk/page_add.png) no-repeat left center; }
 
+.contact {
+  background: url(images/silk/user_comment.png) no-repeat left center; }
+
+.email {
+  background: url(images/silk/email.png) no-repeat left center; }
+
 .add {
   background: url(images/silk/image_add.png) no-repeat left center; }
 
@@ -253,6 +259,11 @@ body#editor {
         -webkit-box-shadow: 1px 1px 1px #666;
         float: left;
         margin: 2em 2em 2em 0; }
+        body#editor section#content #main-content table#contacts {
+          width: 72em; }
+          body#editor section#content #main-content table#contacts td a {
+            font-size: 1em;
+            color: #fff; }
         body#editor section#content #main-content table thead tr td {
           background: #1f3b08;
           text-align: center;

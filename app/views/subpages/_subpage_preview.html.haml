@@ -3,7 +3,7 @@
   .drop-down
     /= link_to "Close", "#close", {:class => "delete icon hidden floatRight"}
     - Webpage.all.each do |web|
-      - if web.has_subpages?
+      - if web.has_subpages? && web.page_alias != 'calculator'
         .webpage.floatLeft
           %h3= web.page_title
           %menu

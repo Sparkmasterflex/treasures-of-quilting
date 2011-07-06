@@ -2,11 +2,11 @@ class WebpagesController < ApplicationController
   before_filter :main_pages
   before_filter :require_user, :only => [:dashboard, :index, :new, :create, :edit, :update]
   before_filter :editor_navigation, :only => [:dashboard, :index, :new, :edit, :update]
-  before_filter :editor_layout, :only => [:dashboard, :index]
+  before_filter :editor_layout, :only => [:index]
 
   def dashboard
-    Rails.logger.info "++++ hello? ++++"
-    @contacts = Contact.find(:all, :conditions => {:status => Contact::Status::NEW}, :order => created_at)
+    @contacts = Contact.find(:all, :conditions => {:status => Contact::Status::NEW}, :order => :created_at)
+    render :layout => 'editor'
   end
 
   def index
@@ -24,7 +24,7 @@ class WebpagesController < ApplicationController
     if @webpage.save
       redirect_to webpages_path
     else
-      render :action => 'new'
+      render :layout => 'editor', :action => 'new'
     end
   end
 

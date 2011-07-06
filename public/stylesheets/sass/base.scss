@@ -259,7 +259,7 @@ ul#slideshow {
 }
 
 /*---- js_gallery ----*/
-ul#gallery {
+ul.gallery {
   li {
     float: left;
     width: 5em;
@@ -505,6 +505,7 @@ form {
     margin: 2em 0;
     h3 { font-size: 1.8em; }
     p { padding: 0 1.26em; }
+    .gallery { width: 100%; }
   }
 }
 

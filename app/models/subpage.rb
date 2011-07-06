@@ -25,6 +25,8 @@ class Subpage < ActiveRecord::Base
 
   before_validation :set_parent
   before_save :create_page_alias
+  
+  validates :page_title, :preview_text, :template, :parent, :presence => true
 
   def self.create_page_attribute(title)
     title.gsub(" ", "_").downcase
@@ -62,7 +64,9 @@ class Subpage < ActiveRecord::Base
   private
 
   def set_parent
-    self.send("parent=", Webpage.find(self.webpage_id).page_alias)
+    self.webpage_id.blank? ?
+      (errors.add :parent, ": Subpages must have a parent") :
+      self.send("parent=", Webpage.find(self.webpage_id).page_alias)
   end
 
   def create_page_alias

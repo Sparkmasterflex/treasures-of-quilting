@@ -9,6 +9,6 @@
       %li= @sender.name
       %li= @sender.email
       %li= @sender.phone
-      %li= @sender.message
+      %li= raw(@sender.message)
       %li= @sender.created_at.strftime('%m/%d/%Y')
 
