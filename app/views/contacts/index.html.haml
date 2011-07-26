@@ -1,0 +1,12 @@
+%h3= "#{AppSystem::NAME} Dashboard"
+%table#contacts
+  %thead
+    %tr
+      %td Contact Name
+      %td Email
+      %td Status
+  - unless @contacts.blank?
+    = render :partial => 'contacts/table_row', :collection => @contacts, :as => :contact
+  - else
+    %tr
+      %td{:colspan => 3} No Contacts

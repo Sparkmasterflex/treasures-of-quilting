@@ -20,6 +20,7 @@
   padding: 2em 3em;
   line-height: 2.5em;
   background: #333 url(images/ajax-loader.gif) no-repeat center center;
+  border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
@@ -41,6 +42,7 @@
     right: -18px;
     top: -15px;
     @include rounded(20px);
+    background: url(images/close.png) no-repeat center center, -o-linear-gradient(bottom, #A82435 0%, #6B0B17 51%, #8B1423 50%, #50030D 100%);
     background: url(images/close.png) no-repeat center center, -moz-linear-gradient(top, #A82435 0%, #8B1423 50%, #6B0B17 51%, #50030D 100%);
     background: url(images/close.png) no-repeat center center, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A82435), color-stop(50%,#8B1423), color-stop(51%,#6B0B17), color-stop(100%,#50030D));
     display: block;

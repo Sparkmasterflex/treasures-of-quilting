@@ -1,12 +1,14 @@
-@mixin rounded($radius) { -webkit-border-radius: $radius; -moz-border-radius: $radius; }
+@mixin rounded($radius) { border-radius: $radius; -webkit-border-radius: $radius; -moz-border-radius: $radius; }
 
 @mixin rounded-custom($tl, $tr, $br, $bl) {
+  border-radius: $tl $tr $br $bl;
   -webkit-border-radius: $tl $tr $br $bl;
   -moz-border-radius: $tl $tr $br $bl;
   overflow: hidden;
 }
 
 @mixin shadow($x:1px, $y:1px, $blur:1px, $color:#444) {
+  box-shadow: $x $y $blur $color;
   -webkit-box-shadow: $x $y $blur $color;
   -moz-box-shadow:  $x $y $blur $color;
 }

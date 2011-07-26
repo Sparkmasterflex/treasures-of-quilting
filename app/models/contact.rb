@@ -9,6 +9,10 @@ class Contact < ActiveRecord::Base
     CLOSED      = 40
     
     LABELS = { NEW => 'New Contact', CONTACTED => 'Contacted', POTENTIAL => 'Potential Client', CLIENT => 'Current Client', CLOSED => 'Client Closed' }
+    
+    def self.options_for_select
+      LABELS.invert.sort
+    end
   end
   
   attr_accessor :estimate

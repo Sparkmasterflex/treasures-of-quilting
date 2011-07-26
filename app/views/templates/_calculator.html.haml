@@ -12,7 +12,7 @@
   #calculator-desc
     %h1 Need More Information
     %p Click the links below to learn more about the options for your quilt.
-    %ul
+    %menu
       - object.subpages.each do |sub|
         %li= link_to sub.page_title, "##{sub.page_alias}", :rel => 'scrollTo'
     = render :partial => '/templates/calculator_desc', :collection => object.subpages

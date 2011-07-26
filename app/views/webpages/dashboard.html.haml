@@ -36,8 +36,6 @@
   - else
     %tr
       %td{:colspan => 3} No New Contacts
-/#preview
-/  %h4 Preview Website Attributes
-/  %ul
-/    = render :partial => '/editor/preview_li', :collection => [@webpages, @subpages, @projects], :as => :objects #TODO clean this up, make it more general <-- need @blogs
+= link_to "View All Contacts", contacts_path, :class => 'contacts icon clearfix'
+
 

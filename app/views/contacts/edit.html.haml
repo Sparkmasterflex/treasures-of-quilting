@@ -1,0 +1,24 @@
+.leftcol
+  %h3= "Contact: #{@contact.name}"
+  = form_for @contact, :url => contact_path(@contact), :method => :put do |f|
+    .formfield
+      = f.label :name
+      = f.text_field :name
+    .formfield
+      = f.label :email
+      = f.email_field :email
+    .formfield
+      = f.label :phone
+      = f.text_field :phone
+    .formfield
+      = f.label :message
+      = f.text_area :message, :size => '25x8', :disabled => true
+    .formfield
+      = link_to "Email back", "mailto:#{@contact.email}", :class => 'email icon'
+    .formfield
+      = f.label :status, "Contact Status"
+      = f.select :status, Contact::Status.options_for_select
+    .formfield
+      = f.submit "Update Contact"
+  
+     

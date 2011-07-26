@@ -1,4 +1,4 @@
 %tr{:class => cycle('odd', 'even')}
-  %td= link_to contact.name, '#', :class => 'contact icon'
+  %td= link_to contact.name, edit_contact_path(contact), :class => 'contact icon'
   %td= link_to contact.email, "mailto:#{contact.email}", :class => 'email icon'
   %td= Contact::Status::LABELS[contact.status]

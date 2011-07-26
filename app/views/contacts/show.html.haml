@@ -1,0 +1,24 @@
+.leftcol
+  %h3= "Contact: #{@contact.name}"
+  %table#contacts
+    %thead
+      %tr
+        %td{:colspan => 2} Contact Information
+    %tr.odd
+      %td Name
+      %td= @contact.name
+    %tr
+      %td Email
+      %td= link_to @contact.email, "mailto:#{@contact.email}"
+    %tr.odd
+      %td Phone:
+      %td= @contact.phone
+    %tr
+      %td{:colspan => 2} Message:
+    %tr.odd
+      %td.message{:colspan => 2}= @contact.message
+    %tr
+      %td Contact Status
+      %td= Contact::Status::LABELS[@contact.status]
+  
+     

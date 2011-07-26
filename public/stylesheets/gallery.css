@@ -17,6 +17,7 @@
   padding: 2em 3em;
   line-height: 2.5em;
   background: #333333 url(images/ajax-loader.gif) no-repeat center center;
+  border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px; }
 
@@ -38,8 +39,10 @@ a#gallery-close {
   z-index: 900;
   right: -18px;
   top: -15px;
+  border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
+  background: url(images/close.png) no-repeat center center, -o-linear-gradient(bottom, #a82435 0%, #6b0b17 51%, #8b1423 50%, #50030d 100%);
   background: url(images/close.png) no-repeat center center, -moz-linear-gradient(top, #a82435 0%, #8b1423 50%, #6b0b17 51%, #50030d 100%);
   background: url(images/close.png) no-repeat center center, -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a82435), color-stop(50%, #8b1423), color-stop(51%, #6b0b17), color-stop(100%, #50030d));
   display: block;

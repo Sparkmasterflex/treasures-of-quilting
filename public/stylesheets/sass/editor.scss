@@ -96,6 +96,7 @@ a { cursor: pointer; }
 .edit { background: url(images/silk/pencil.png) no-repeat left center; }
 .new { background: url(images/silk/page_add.png) no-repeat left center; }
 .contact { background: url(images/silk/user_comment.png) no-repeat left center; }
+.contacts { background: url(images/silk/user_go.png) no-repeat left center; }
 .email { background: url(images/silk/email.png) no-repeat left center; }
 .add { background: url(images/silk/image_add.png) no-repeat left center; }
 .image { background: url(images/silk/image.png) no-repeat left center; }
@@ -240,8 +241,17 @@ body#editor {
         tr {
           background: $light-green;
           &.odd { background: $green; }
-          td { font-size: 1.6em; padding: 0.63em 1em;}
+          td {
+            font-size: 1.6em; padding: 0.63em 1em;
+            &.message { padding: 0.5em 4em; line-height: 1.35em; }
+          }
         }
+      }
+      table + a.contacts {
+        display: block;
+        width: 100%;
+        float: left;
+        color: #222;
       }
       ul#top-level {
           li {
@@ -283,7 +293,11 @@ body#editor {
         }
       .leftcol { width: 47.5em; float: left;
         .formfield {
-          a.help { float: right; width: 20px; padding: 0; margin: 0 10em 0 0; }
+          a {
+            color: #222;
+            &:hover { text-decoration: none; }
+            &.help { float: right; width: 20px; padding: 0; margin: 0 10em 0 0; }
+          }
           margin-bottom: 1.5em;
           label {
             width: 100%;

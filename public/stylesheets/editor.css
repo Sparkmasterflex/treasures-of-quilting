@@ -68,6 +68,7 @@ a {
   padding: 0.5em;
   background: #f1f1f1;
   border: 1px solid #666;
+  border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   margin-bottom: 1em; }
@@ -97,6 +98,9 @@ ul.collapse li {
 
 .contact {
   background: url(images/silk/user_comment.png) no-repeat left center; }
+
+.contacts {
+  background: url(images/silk/user_go.png) no-repeat left center; }
 
 .email {
   background: url(images/silk/email.png) no-repeat left center; }
@@ -277,6 +281,14 @@ body#editor {
           body#editor section#content #main-content table tr td {
             font-size: 1.6em;
             padding: 0.63em 1em; }
+            body#editor section#content #main-content table tr td.message {
+              padding: 0.5em 4em;
+              line-height: 1.35em; }
+      body#editor section#content #main-content table + a.contacts {
+        display: block;
+        width: 100%;
+        float: left;
+        color: #222; }
       body#editor section#content #main-content ul#top-level li {
         position: relative;
         padding: 1em;
@@ -324,11 +336,15 @@ body#editor {
         float: left; }
         body#editor section#content #main-content .leftcol .formfield {
           margin-bottom: 1.5em; }
-          body#editor section#content #main-content .leftcol .formfield a.help {
-            float: right;
-            width: 20px;
-            padding: 0;
-            margin: 0 10em 0 0; }
+          body#editor section#content #main-content .leftcol .formfield a {
+            color: #222; }
+            body#editor section#content #main-content .leftcol .formfield a:hover {
+              text-decoration: none; }
+            body#editor section#content #main-content .leftcol .formfield a.help {
+              float: right;
+              width: 20px;
+              padding: 0;
+              margin: 0 10em 0 0; }
           body#editor section#content #main-content .leftcol .formfield label {
             width: 100%;
             font-size: 1.8em;
@@ -367,6 +383,7 @@ body#editor {
           margin-bottom: 0.14em; }
         body#editor section#content #main-content .rightcol #image-group {
           border: 1px solid #000;
+          border-radius: 5px;
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
           color: #fff;
@@ -394,6 +411,7 @@ body#editor {
             margin: 0.63em 0;
             background: #f1f1f1;
             border: 1px solid #666;
+            border-radius: 5px;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px; }
             body#editor section#content #main-content .rightcol ul#slides li p {
@@ -444,6 +462,7 @@ body#editor {
         body#editor section#content #main-content .rightcol ul#page-widgets li {
           background: #f1f1f1;
           border: 1px solid #666;
+          border-radius: 5px;
           -webkit-border-radius: 5px;
           -moz-border-radius: 5px;
           padding: 0.31em;
